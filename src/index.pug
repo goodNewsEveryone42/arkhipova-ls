@@ -8,8 +8,118 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
   body
-    .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+    include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio
+  body
+    header.header
+      img.header__logo(src="#")
+      nav.header-nav
+        ul.header-nav__list.nav-list
+          li.nav-list__item: a(href="#") Главная
+          li.nav-list__item: a(href="#") Обо мне
+          li.nav-list__item: a(href="#") Навыки
+          li.nav-list__item: a(href="#") Работы
+          li.nav-list__item: a(href="#") Отзывы
+          li.nav-list__item: a(href="#") Связаться
+      ul.header-social
+        li.header-social__inst: a(href="#")
+        li.header-social__vk: a(href="#")
+        li.header-social__git: a(href="#")
+      h1.header__title Личный сайт #[br] веб разработчика
+        span  Владимир #[br] Астаханов
+  main.main
+    section.whoami
+      h2.whoami__title
+      .whoami__info.info
+        .info__img
+        img(src="#")
+        table.info__table
+          tr
+            td Проживаю:
+            td Хабаровск
+          tr
+            td Возраст
+            td 24 года
+          tr
+            td Родился
+            td 28 сентября 1995
+      .whoami__description.description
+        p.description__hello Привет, меня зовут
+        p.description__name Владимир Астаханов
+        p.description__profession Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+        p.description__note Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    section.skills
+      h2.skills__title Чем я могу быть полезен вам
+      p.skills__note Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      .skills__frontend.frontend
+        .frontend__item HTML5
+        .frontend__item CSS3
+        .frontend__item Javascript
+        .frontend__item Jquery и Vue.js
+      .skills__workflow.workflow
+        .workflow__item GIT
+        .workflow__item Terminal
+        .workflow__item Gulp
+        .workflow__item Webpack
+    section.work
+      h2.my-work__title Мои работы
+      .my-work__slider
+      .my-work__site.work-site
+        p.work-site__html HTML
+        p.work-site__css CSS
+        p.work-site__js Javascript
+        p.work-site__site-name Сайт школы образования
+        p.work-site__description Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        a.work-site__link Посмотреть сайт
+    section.about-me
+      section.about-me__slider.slider-about-me
+        h2.slider-about-me__title Что обо мне говорят
+        button
+        button
+        .slider-about-me__container.slider-reviews
+          .slider-reviews__slide.slide-review
+            p.slide-review__feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+            p.slide-review__name Ковальчук Дмитрий
+              span Основатель Loftschool
+          .slider-reviews__slide.slide-review
+            p.slide-review__feedback Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+            p.slide-review__name Владимир Сабанцев
+              span Преподаватель
+      section.about-me__contact-me.contact-me
+        form.contact-me__search(action="#" method="get")
+          label(for="name") Введите ваше имя
+          input(type="text" id="name" name="name")
+          label(for="email") Введите ваш email
+          input(type="email" id="email" name="email")
+          label(for="comment") Сообщение к письму
+          textarea(id="comment" name="comment")
+          button(type="submit") Отправить
+  footer.footer
+    .footer__copyright.copyright
+      p.copyright__date © 2020
+      p.copuright__text Владимир Астаханов
+        span  Личный сайт веб-разработчика
+    .footer__nav.footer-nav
+      ul.footer-nav__list.nav-list
+          li.nav-list__item: a(href="#") Главная
+          li.nav-list__item: a(href="#") Обо мне
+          li.nav-list__item: a(href="#") Навыки
+          li.nav-list__item: a(href="#") Работы
+          li.nav-list__item: a(href="#") Отзывы
+          li.nav-list__item: a(href="#") Связаться
+    .footer__description.footer-description
+      p.footer-description__note Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+      ul.footer-description__social
+        li.footer-description__social__inst: a(href="#")
+        li.footer-description__social__vk: a(href="#")
+        li.footer-description__social__git: a(href="#")
+    .footer__quote.footer-quote
+      p.footer-quote__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+      p.footer-quote__autor Martin Golding
