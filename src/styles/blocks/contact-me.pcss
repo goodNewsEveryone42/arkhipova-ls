@@ -47,12 +47,28 @@
     border: none;
     border-bottom: 1px solid #464d62;
     box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+        border-bottom: 1px solid #5500f2;
+    }
+
+    &:hover + .contact-me__icon-user,
+    &:hover + .contact-me__icon-envelope {
+        opacity: 1;
+        fill: #5500f2;
+    }
 }
 
 .contact-me textarea {
     min-height: 95px;
     margin-bottom: 60px;
     padding-left: 45px;
+
+    &:hover + .contact-me__icon-message {
+        opacity: 1;
+        fill: #5500f2;
+    }
 }
 
 .contact-me input {

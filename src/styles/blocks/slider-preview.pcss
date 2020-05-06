@@ -40,6 +40,10 @@
     width: 50%;
     height: 100%;
     background-color: #353e4e;
+
+    &:hover {
+        background-color: #5500f2;
+    }
 }
 
 .slider-preview__btn-up span {
@@ -48,6 +52,29 @@
 }
 
 .slider-preview__btn-down span {
+    color: #ffffff;
     display: block;
     transform: rotate(90deg);
+}
+
+.slider-preview__counts {
+    position: relative;
+    width: 157px;
+    overflow: hidden;
+}
+
+
+
+.slider-preview__count {
+    display: none;
+    position: absolute;
+    top: -10%;
+    left: -50%;
+    font-size: 405px;
+    font-weight: 800;
+    opacity: 0.1;
+}
+
+.slider-preview__count--active {
+    display: block;
 }

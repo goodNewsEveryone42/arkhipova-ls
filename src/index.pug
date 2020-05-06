@@ -18,10 +18,10 @@ html(lang="en")
                 .header__buttons
                   nav.header-nav
                     - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
-                    ul.header-nav__list.nav-list
+                    ul.header-nav__list
                       each item in items
-                        li.nav-list__item
-                          a.nav-list__link #{item}
+                        li.header-nav__item
+                          a.header-nav__link #{item}
                 .header__socials
                   - var icons = ["insta", "vk", "github"];
                   ul.socials
@@ -161,6 +161,12 @@ html(lang="en")
                         span >
                       button(type="button").slider-preview__btn-down
                         span >
+                  .slider-preview__counts
+                    .slider-preview__count 1
+                    .slider-preview__count 2
+                    .slider-preview__count 3
+                    .slider-preview__count.slider-preview__count--active 4
+                    .slider-preview__count 5
                 .my-work__site
                   .site-school
                     - var items = ["HTML", "CSS", "Javascript"];
@@ -239,7 +245,7 @@ html(lang="en")
                 .footer__descrition-quote
                   .footer__description
                     .footer-description
-                      p.footer-description__note Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                      p.footer-description__note Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
                       - var icons = ["insta", "vk", "github"];
                     .footer__socials
                       ul.footer-socials
