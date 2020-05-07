@@ -1,7 +1,8 @@
 .hero {
-    padding-top: 58px;
+    padding-top: 60px;
     margin-bottom: 170px;
 }
+
 .hero__content {
     margin-top: 310px;
     margin-bottom: 330px;
@@ -19,6 +20,7 @@
     line-height: 30px;
     font-weight: 600;
     margin-right: 45px;
+    fill: #464d62;
 
     &:hover {
         color: #5500f2;
@@ -32,4 +34,25 @@
     width: 30px;
     height: 30px;
     margin-left: 10px;
+}
+
+@media screen and (max-width: $bp-desktop) {
+    .hero {
+        padding-top: 67px;
+        margin-bottom: 420px;
+    }
+
+    .hero__content {
+        margin-top: 282px;
+        margin-bottom: 253px;
+        margin-left: 250px;
+    }
+
+    .scroll-down-btn {
+        margin-right: 0;
+    }
+
+    .scroll-down-btn__icon {
+        margin-left: 17px;
+    }
 }

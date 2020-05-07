@@ -1,12 +1,13 @@
 .user-data__description {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 32px;
+    font-weight: 700;
     opacity: 0.4;
 }
 
 .user-data__name {
-    font-size: 72px;
-    line-height: 60px;
+    font-size: 79px;
+    line-height: 62px;
     font-weight: 800;
 }
 
@@ -23,4 +24,21 @@
 
 .user-data__description {
     margin-bottom: 22px;
+}
+
+@media screen and (max-width: $bp-desktop) {
+    .user-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+    }
+
+    .user-data__description {
+        text-align: end;
+        margin-right: 64px;
+    }
+
+    .user-data__name {
+        text-align: start;
+    }
 }
