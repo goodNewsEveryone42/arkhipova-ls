@@ -1,0 +1,107 @@
+.contact-me__title {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 700;
+    margin-right: 94px;
+    margin-bottom: 75px;
+}
+.contact-me label {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 600;
+    opacity: 0.3;
+    margin-left: 45px;
+    margin-bottom: 3px;
+}
+
+.contact-me {
+    width: 869px;
+}
+
+.contact-me__wrap {
+    margin-bottom: 34px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-me__column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-me__icon-user,
+.contact-me__icon-message,
+.contact-me__icon-envelope {
+    position: absolute;
+    top: 48px;
+    width: 30px;
+    height: 29px;
+    opacity: 0.3;
+}
+
+
+.contact-me input,
+.contact-me textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #464d62;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+        border-bottom: 1px solid #5500f2;
+    }
+
+    &:hover + .contact-me__icon-user,
+    &:hover + .contact-me__icon-envelope {
+        opacity: 1;
+        fill: #5500f2;
+    }
+}
+
+.contact-me textarea {
+    min-height: 95px;
+    margin-bottom: 60px;
+    padding-left: 45px;
+
+    &:hover + .contact-me__icon-message {
+        opacity: 1;
+        fill: #5500f2;
+    }
+}
+
+.contact-me input {
+    width: 410px;
+    height: 60px;
+    padding-left: 45px;
+}
+
+.contact-me input::placeholder {
+    font-size: 18px;
+    line-height: 48px;
+    font-weight: 700;
+    color: #464d62;
+}
+
+.contact-me textarea::placeholder {
+    font-size: 18px;
+    line-height: 35px;
+    font-weight: 700;
+    color: #464d62;
+    padding-top: 8px;
+    padding-right: 350px;
+}
+
+.contact-me__btn {
+    font-size: 18px;
+    line-height: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    width: 348px;
+    height: 80px;
+    background: linear-gradient(90deg, #8002f2, #4a00ed);
+    border-radius: 40px 0 40px 0;
+    margin-bottom: 135px;
+}

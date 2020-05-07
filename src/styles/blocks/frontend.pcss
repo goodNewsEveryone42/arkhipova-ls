@@ -1,0 +1,39 @@
+.frontend__item-name {
+    font-size: 18px;
+
+    font-weight: 700;
+    opacity: 0.5;
+}
+
+.frontend {
+    display: flex;
+}
+
+.frontend__html,
+.frontend__css,
+.frontend__js,
+.frontend__vue {
+    display: flex;
+    position: relative;
+    width: 165px;
+    height: 160px;
+
+    &-title {
+        font-size: 18px;
+        font-weight: 700;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+      }
+      
+      circle:last-child {
+        transform: rotate(180deg);
+        transform-origin: 50% 50%;
+      }
+}
+
+.frontend__item {
+    margin-right: 36px;
+}
+
