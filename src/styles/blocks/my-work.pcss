@@ -4,13 +4,6 @@
     font-weight: 700;
 }
 
-.work-site__item {
-    font-size: 15px;
-    line-height: 48px;
-    font-weight: 600;
-    opacity: 0.7;
-}
-
 .my-work__wrap {
     display: flex;
 }
@@ -23,6 +16,35 @@
     display: flex;
 }
 
-.my-work {
-    margin-bottom: 50px;
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .my-work__title {
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .my-work__title {
+        font-size: 34px;
+        line-height: 48px;
+        font-weight: 700;
+        margin-bottom: 57px;
+    }
+
+    .my-work__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .my-work__slider {
+        display: flex;
+        margin-left: 44px;
+        margin-bottom: 119px;
+    }
+
+    .my-work__site {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

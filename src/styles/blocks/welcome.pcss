@@ -2,8 +2,18 @@
     background-color: #afc4f3;
 }
 
-@media screen and (max-width: $bp-desktop) {
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
     .welcome {
         background-color: #afc375;
+    }
+
+    .welcome__triangles {
+        margin-bottom: -1px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .welcome__triangles {
+        margin-bottom: -1px;
     }
 }

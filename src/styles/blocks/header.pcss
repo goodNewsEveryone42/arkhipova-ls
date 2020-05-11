@@ -4,6 +4,21 @@
     align-items: center;
 }
 
+.header__menu-popup {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__hidden-socials {
+    display: none;
+}
+
+.header__hamburger {
+    display: none;
+}
+
 .header__logo {
     font-size: 36px;
     line-height: 30px;
@@ -13,4 +28,41 @@
 .header__buttons {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .header__menu-popup {
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .header__menu-popup {
+        display: none;
+    }
+
+    .header__socials-hamburger {
+        width: 325px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__hidden-socials {
+        display: block;
+    }
+
+    .header__hamburger {
+        display: block;
+    }
+    
+    .header__hamburger-btn {
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        fill: #464d62;
+    }
 }

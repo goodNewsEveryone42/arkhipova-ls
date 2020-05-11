@@ -11,7 +11,7 @@
 }
 
 @mixin tablets() {
-  @media screen and (max-width: $bp-tablets) {
+  @media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
     @content;
   }
 }

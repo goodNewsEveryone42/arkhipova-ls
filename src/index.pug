@@ -15,20 +15,32 @@ html(lang="en")
             section.hero
               header.header
                 p.header__logo АА
-                .header__buttons
-                  nav.header-nav
-                    - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
-                    ul.header-nav__list
-                      each item in items
-                        li.header-nav__item
-                          a.header-nav__link #{item}
-                .header__socials
-                  - var icons = ["insta", "vk", "github"];
-                  ul.socials
-                    each item in icons
-                      li.socials__item
-                        a(href="" target="_blank").socials__link
-                          +icon(item, "socials__icon")
+                .header__socials-hamburger
+                  .header__hidden-socials
+                    - var icons = ["insta", "vk", "github"];
+                      ul.socials-hidden
+                        each item in icons
+                          li.socials-hidden__item
+                            a(href="" target="_blank").socials-hidden__link
+                              +icon(item, "socials-hidden__icon")
+                  .header__hamburger
+                    button.header__hamburger-btn
+                      +icon("menu", "header__hamburger-btn-icon")
+                .header__menu-popup
+                  .header__buttons
+                    nav.header-nav
+                      - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                      ul.header-nav__list
+                        each item in items
+                          li.header-nav__item
+                            a.header-nav__link #{item}
+                  .header__socials
+                    - var icons = ["insta", "vk", "github"];
+                    ul.socials
+                      each item in icons
+                        li.socials__item
+                          a(href="" target="_blank").socials__link
+                            +icon(item, "socials__icon")
               .hero__content
                 .user-data
                   .user-data__description Личный сайт #[br]веб разработчика
@@ -54,17 +66,18 @@ html(lang="en")
                       tr
                         td Родился
                         td 28 сентября 1995
+
                 .whoami__description
                   .description
                     p.description__hello Привет, меня зовут
                     p.description__name Анна Архипова
                     p.description__profession Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                     p.description__note Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-          section.section-values
-            section.triangles
-              svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangle
+          section.section-values.welcome__section-value
+            section.triangles.welcome__triangles
+              svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.welcome-triangle
                 polygon(points="0,0 0,100 1000,100")
-              svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.triangle
+              svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.welcome-triangle
                 polygon(points="1000,0 1000,100 0,100")
 
         .skills
@@ -73,11 +86,13 @@ html(lang="en")
               .skills__container
                 .skills__description
                   .skills-title
-                    h2.skills-title__heading Чем я могу быть полезна вам
-                    p.skills-title__note Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-                  .skills__image
-                    .skills-img
-                      +image("content/backpack.png", "skills-img__image", "фотография рюкзака")
+                    h2.skills-title__heading 
+                      span Чем я могу быть полезна вам
+                    p.skills-title__note 
+                      span Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .skills__image
+                  .skills-img
+                    +image("content/backpack.png", "skills-img__image", "фотография рюкзака")
                 .skills__frontend-workflow
                   .skills__frontend
                     h3.skills__frontend-title Front-end
@@ -139,34 +154,36 @@ html(lang="en")
                           circle( cx="100" cy="100" r="80" fill="transparent" stroke="url(#gradient)" stroke-width="25px" stroke-dasharray="502.4" stroke-dashoffset="314")
                         .workflow__webpack-title.workflow__item-name Webpack
 
-            section.my-work
+          section.my-work
+            .container
               h2.my-work__title Мои работы
-              .my-work__wrap
-                .my-work__slider
-                  .slider-preview
-                    +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
-                    .slider-preview__slides
-                      .slider-preview__slide
-                        +image("content/slide2.jpg", "slider-preview__image", "превью работ в слайдере")
-                      .slider-preview__slide
-                        +image("content/slide1.jpg", "slider-preview__image", "превью работ в слайдере")
-                      .slider-preview__slide
-                        +image("content/slide4.jpg", "slider-preview__image", "превью работ в слайдере")
-                      .slider-preview__slide
-                        +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
-                      .slider-preview__slide
-                        +image("content/slide3.jpg", "slider-preview__image", "превью работ в слайдере")
-                    .slider-preview__btn
-                      button(type="button").slider-preview__btn-up
-                        span >
-                      button(type="button").slider-preview__btn-down
-                        span >
-                  .slider-preview__counts
-                    .slider-preview__count 1
-                    .slider-preview__count 2
-                    .slider-preview__count 3
-                    .slider-preview__count.slider-preview__count--active 4
-                    .slider-preview__count 5
+            .my-work__wrap
+              .my-work__slider
+                .slider-preview
+                  +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
+                  .slider-preview__slides
+                    .slider-preview__slide
+                      +image("content/slide2.jpg", "slider-preview__image", "превью работ в слайдере")
+                    .slider-preview__slide
+                      +image("content/slide1.jpg", "slider-preview__image", "превью работ в слайдере")
+                    .slider-preview__slide
+                      +image("content/slide4.jpg", "slider-preview__image", "превью работ в слайдере")
+                    .slider-preview__slide
+                      +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
+                    .slider-preview__slide
+                      +image("content/slide3.jpg", "slider-preview__image", "превью работ в слайдере")
+                  .slider-preview__btn
+                    button(type="button").slider-preview__btn-up
+                      span >
+                    button(type="button").slider-preview__btn-down
+                      span >
+                .slider-preview__counts
+                  .slider-preview__count 1
+                  .slider-preview__count.slider-preview__count--active 2
+                  .slider-preview__count 3
+                  .slider-preview__count 4
+                  .slider-preview__count 5
+              .container
                 .my-work__site
                   .site-school
                     - var items = ["HTML", "CSS", "Javascript"];
@@ -242,7 +259,7 @@ html(lang="en")
                       each item in items
                         li.footer-nav-list__item
                           a.footer-nav-list__link #{item}
-                .footer__descrition-quote
+                .footer__description-quote
                   .footer__description
                     .footer-description
                       p.footer-description__note Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool

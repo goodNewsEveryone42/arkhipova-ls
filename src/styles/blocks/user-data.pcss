@@ -1,13 +1,13 @@
 .user-data__description {
     font-size: 18px;
-    line-height: 32px;
+    line-height: 31px;
     font-weight: 700;
     opacity: 0.4;
 }
 
 .user-data__name {
-    font-size: 79px;
-    line-height: 62px;
+    font-size: 71px;
+    line-height: 60px;
     font-weight: 800;
 }
 
@@ -26,7 +26,8 @@
     margin-bottom: 22px;
 }
 
-@media screen and (max-width: $bp-desktop) {
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
     .user-data {
         display: flex;
         flex-direction: row;
@@ -35,10 +36,37 @@
 
     .user-data__description {
         text-align: end;
-        margin-right: 64px;
+        margin-right: 56px;
     }
 
     .user-data__name {
         text-align: start;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .user-data__name {
+        font-size: 55px;
+        line-height: 55px;
+        font-weight: 800;
+    }
+
+    .user-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .user-data__description,
+    .user-data__name {
+        text-align: center;
+    }
+
+    .user-data__description {
+        margin-right: 0px;
+    }
+    
+    .user-data__description {
+        margin-bottom: 24px;
     }
 }

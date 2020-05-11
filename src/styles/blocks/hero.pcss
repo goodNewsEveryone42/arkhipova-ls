@@ -36,23 +36,35 @@
     margin-left: 10px;
 }
 
-@media screen and (max-width: $bp-desktop) {
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
     .hero {
-        padding-top: 67px;
-        margin-bottom: 420px;
+        padding-top: 60px;
+        margin-bottom: 395px;
     }
-
+    
     .hero__content {
-        margin-top: 282px;
-        margin-bottom: 253px;
-        margin-left: 250px;
+        margin-top: 262px;
+        margin-bottom: 235px;
+        margin-left: 231px;
     }
 
     .scroll-down-btn {
-        margin-right: 0;
+        margin-right: -5px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .hero {
+        padding-top: 65px;
+        margin-bottom: 170px;
     }
 
-    .scroll-down-btn__icon {
-        margin-left: 17px;
+    .hero__content {
+        margin-top: 195px;
+        margin-bottom: 575px;
+        margin-left: 0;
+    }
+    .hero__bottom-btn {
+        display: none;
     }
 }

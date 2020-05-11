@@ -40,7 +40,6 @@
     opacity: 0.3;
 }
 
-
 .contact-me input,
 .contact-me textarea {
     background-color: transparent;
@@ -103,5 +102,80 @@
     height: 80px;
     background: linear-gradient(90deg, #8002f2, #4a00ed);
     border-radius: 40px 0 40px 0;
-    margin-bottom: 135px;
+}
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .contact-me {
+        width: 867px;
+    }
+
+    .contact-me__title {
+        font-size: 36px;
+        line-height: 48px;
+        font-weight: 700;
+        margin-right: 94px;
+        margin-bottom: 77px;
+    }
+
+    .contact-me label {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 600;
+        opacity: 0.3;
+        margin-left: 45px;
+        margin-bottom: 3px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .contact-me {
+        width: unset;
+        width: 787px;
+        text-align: center;
+    }
+
+    .contact-me__column {
+        text-align: start;
+    }
+
+    .contact-me__title {
+        font-size: 35px;
+        line-height: 48px;
+        font-weight: 700;
+        margin-right: unset;
+        margin-bottom: 50px;
+    }
+
+    .contact-me input {
+        width: 380px;
+        height: 60px;
+        padding-left: 45px;
+    }
+
+    .contact-me textarea {
+        min-height: 95px;
+        margin-bottom: 35px;
+        padding-left: 45px;
+    }
+
+    .contact-me textarea::placeholder {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 700;
+        color: #464d62;
+        padding-top: 8px;
+        padding-right: 350px;
+    }
+
+    .contact-me__btn {
+        font-size: 18px;
+        line-height: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ffffff;
+        width: 399px;
+        height: 90px;
+        background: linear-gradient(90deg, #8002f2, #4a00ed);
+        border-radius: 40px 0 40px 0;
+    }
 }

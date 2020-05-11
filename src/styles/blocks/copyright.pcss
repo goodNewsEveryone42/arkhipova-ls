@@ -26,3 +26,52 @@
     justify-content: space-between;
     margin-right: 125px;
 }
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .copyright {
+        width: 164px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 112px;
+    }
+
+    .copyright__date {
+        margin-bottom: 17px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .copyright__date {
+        font-size: 55px;
+        line-height: 48px;
+        font-weight: 600;
+        color: #494b50;
+        margin-top: 6px;
+    }
+    
+    .copyright__text {
+        font-size: 20px;
+        line-height: 33px;
+        font-weight: 700;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+
+    .copyright {
+        width: 164px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 107px;
+    }
+
+    .copyright__date {
+        margin-bottom: 25px;
+    }
+
+    .copyright__text span {
+        font-size: 16px;
+        line-height: 30px;
+        color: #494b50;
+        text-transform: none;
+    }
+}

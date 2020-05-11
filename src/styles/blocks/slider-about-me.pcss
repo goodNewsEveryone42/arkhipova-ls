@@ -1,3 +1,10 @@
+.slider-about-me__title {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 700;
+    margin-right: 94px;
+}
+
 .slider-about-me__container-title {
     margin-bottom: 90px;
     display: flex;
@@ -25,4 +32,48 @@
     width: 977px;
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .slider-about-me__container-title {
+        margin-bottom: 90px;
+        display: flex;
+    }
+
+    .slider-about-me__container {
+        width: 955px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .slider-about-me__container-title {
+        margin-bottom: 60px;
+        display: flex;
+    }
+
+    .slider-about-me__title {
+        font-size: 35px;
+        line-height: 48px;
+        font-weight: 700;
+        margin-right: 74px;
+    }
+
+    .slider-about-me__btn {
+        width: 151px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slider-about-me__btn button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .slider-about-me__container {
+        max-width: 780px;
+        display: flex;
+        justify-content: space-between;
+    }
 }

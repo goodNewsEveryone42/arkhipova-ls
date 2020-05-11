@@ -12,3 +12,38 @@
 .whoami__info {
     margin-right: 83px;
 }
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .whoami {
+        padding-bottom: 225px;
+    }
+
+    .whoami__wrap {
+        width: 100%;
+        display: flex;
+    }
+    
+    .whoami__info {
+        margin-right: 110px;
+    }
+
+    .whoami__description {
+        max-width: 551px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .whoami__info {
+        margin-right: 88px;
+    }
+
+    .whoami__description {
+        max-width: 100%;
+    }
+
+    .whoami {
+        padding-bottom: 161px;
+        display: flex;
+        justify-content: center;
+    }
+}

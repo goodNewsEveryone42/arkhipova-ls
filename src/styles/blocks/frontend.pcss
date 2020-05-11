@@ -37,3 +37,27 @@
     margin-right: 36px;
 }
 
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .frontend__item {
+        width: 165px;
+        height: 160px;
+        margin-right: 12px;
+    }
+
+    .frontend__item svg {
+        width: 165px;
+        height: 165px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .frontend {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .frontend__item {
+        margin-right: 0px;
+    }
+}

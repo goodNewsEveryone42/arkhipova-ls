@@ -1,5 +1,6 @@
 .about-me {
     background-color: #afc4f3;
+    padding-bottom: 135px;
 }
 
 .about-me__triangle {
@@ -13,4 +14,44 @@
 .about-me__slider {
     padding-top: 290px;
     margin-bottom: 185px;
+}
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .about-me {
+        background-color: #afc4f3;
+        padding-bottom: 165px;
+    }
+
+    .about-me__triangles {
+        margin-bottom: -59px;
+    }
+
+    .about-me__triangles .about-me__triangle {
+        height: 60px;
+    }
+
+    .about-me__slider {
+        padding-top: 193px;
+        margin-bottom: 185px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .about-me {
+        background-color: #afc4f3;
+        padding-bottom: 127px;
+    }
+
+    .about-me__slider {
+        padding-top: 212px;
+        margin-bottom: 125px;
+    }
+    
+    .about-me__triangles {
+        margin-bottom: -43px;
+    }
+
+    .about-me__triangles .about-me__triangle {
+        height: 45px;
+    }
 }
