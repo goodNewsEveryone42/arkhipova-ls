@@ -41,32 +41,18 @@
     position: relative;
 }
 
-.slider-review__name-koval::before {
-    content: "";
+.slider-reviews__img-koval {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: -5px;
-    right: 104px;
-    background-position: 0 0;
-    background-image: url("../images/content/koval.png");
-    background-repeat: no-repeat;
+    bottom: 9px;
 }
 
 .slider-review__name-sabancev {
     position: relative;
 }
 
-.slider-review__name-sabancev::before {
-    content: "";
+.slider-reviews__img-sabancev {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: -5px;
-    right: 104px;
-    background-position: 0 0;
-    background-image: url("../images/content/sabancev.png");
-    background-repeat: no-repeat;
+    bottom: 9px;
 }
 
 .slider-reviews__slide {
@@ -155,5 +141,76 @@
     
     .slider-review__sabancev {
         margin-bottom: 59px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .slider-review__feedback {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 600;
+        opacity: 0.5;
+    }
+    
+    .slider-review__name {
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 700;
+        margin-left: 70px;
+    }
+    
+    .slider-review__name span {
+        font-size: 14px;
+        line-height: 30px;
+        font-weight: 600;
+        opacity: 0.3;
+    }
+
+    .slider-reviews__slide {
+        width: 260px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .slider-reviews__icon {
+        display: none;
+    }
+
+    .slider-reviews__wrap {
+        min-width: 260px;
+    }
+
+    .slider-review__name-koval {
+        white-space: nowrap;
+        position: relative;
+    }
+    
+    .slider-reviews__img-koval {
+        position: absolute;
+        top: 68%;
+        left: 0%;
+        width: 50px;
+        height: auto;
+    }
+    
+    .slider-review__name-sabancev {
+        position: relative;
+        white-space: nowrap;
+    }
+    
+    .slider-reviews__img-sabancev {
+        position: absolute;
+        top: 68%;
+        left: 0%;
+        width: 50px;
+        height: auto;
+    }
+
+    .slider-review__koval {
+        margin-bottom: auto;
+    }
+    
+    .slider-review__sabancev {
+        margin-bottom: auto;
     }
 }

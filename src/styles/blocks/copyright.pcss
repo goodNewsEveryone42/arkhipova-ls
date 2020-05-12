@@ -75,3 +75,41 @@
         text-transform: none;
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .copyright__date {
+        font-size: 48px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #494b50;
+        margin-top: 6px;
+        margin-bottom: 24px;
+    }
+    
+    .copyright__text {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+
+    .copyright__text br {
+        display: none;
+    }
+
+    .copyright__text span {
+        font-size: 14px;
+        line-height: 24px;
+        color: #494b50;
+        text-transform: none;
+        white-space: nowrap;
+    }
+
+    .copyright {
+        width: 164px;
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+    }
+}

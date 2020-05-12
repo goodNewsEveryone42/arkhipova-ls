@@ -136,3 +136,30 @@
         opacity: 0.1;
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .slider-preview {
+        height: 185px;
+    }
+
+    .slider-preview__slides {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 205px;
+        height: 345px;
+        overflow: hidden;
+        display: none;
+    }
+
+    .slider-preview__counts {
+        display: none;
+    }
+
+    .slider-preview__btn {
+        position: absolute;
+        bottom: 0;
+        width: 100px;
+        height: 51px;
+    }
+}

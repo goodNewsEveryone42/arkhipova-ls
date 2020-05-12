@@ -48,3 +48,29 @@
         justify-content: center;
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .my-work__title {
+        font-size: 24px;
+        line-height: 48px;
+        font-weight: 700;
+        margin-bottom: 22px;
+    }
+
+    .my-work {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .my-work__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .my-work__slider {
+        display: flex;
+        margin-left: unset;
+        margin-bottom: 60px;
+    }
+}

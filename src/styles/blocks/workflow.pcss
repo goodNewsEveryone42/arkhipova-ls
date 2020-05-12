@@ -3,6 +3,7 @@
     font-weight: 700;
     opacity: 0.5;
 }
+
 .workflow {
     display: flex;
 }
@@ -61,4 +62,29 @@
     .workflow__item {
         margin-right: 0px;
     }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .workflow__item-name {
+        font-size: 16px;
+        font-weight: 700;
+        opacity: 0.5;
+    }
+
+    .workflow {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .workflow__item {
+        width: 129px;
+        height: 129px;
+        margin-right: 0px;
+    }
+
+    .workflow__item svg {
+        width: 100%;
+        height: 100%;
+    }
+
 }
