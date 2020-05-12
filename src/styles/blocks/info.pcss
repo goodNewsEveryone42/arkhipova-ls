@@ -43,3 +43,32 @@
         white-space: nowrap;
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .info {
+        width: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info__table {
+        width: 100%;
+        height: auto;
+        white-space: nowrap;
+    }
+
+    .info__table td:nth-child(1) {
+        font-size: 14px;
+        line-height: 30px;
+        opacity: 0.3;
+    }
+    
+    .info__table td:nth-child(2) {
+        font-size: 14px;
+        line-height: 30px;
+        font-weight: 600;
+    }
+    
+}

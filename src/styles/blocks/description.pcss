@@ -1,46 +1,46 @@
 .description__hello,
-    .description__profession,
-    .description__note {
-        font-size: 16px;
-        line-height: 30px;
-        font-weight: 600;
-        opacity: 0.5;
-    }
-    
-    .description__name {
-        font-size: 36px;
-        line-height: 48px;
-        font-weight: 700;
-    }
-    
-    .description__note {
-        position: relative;
-        font-weight: 400;
-        font-style: italic;
-    }
-    
-    .description__note::before {
-        position: absolute;
-        content:"*";
-        top: 10px;
-        left: -65px;
-        font-size: 50px;
-        font-style: italic;
-        opacity: 0.2;
-        color: red;
-    }
+.description__profession,
+.description__note {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 600;
+    opacity: 0.5;
+}
+
+.description__name {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 700;
+}
+
+.description__note {
+    position: relative;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.description__note::before {
+    position: absolute;
+    content:"*";
+    top: 10px;
+    left: -65px;
+    font-size: 50px;
+    font-style: italic;
+    opacity: 0.2;
+    color: red;
+}
     
     .description__hello {
         margin-bottom: 13px;
-    }
+}
     
     .description__name {
         margin-bottom: 28px;
-    }
+}
     
     .description__profession {
         margin-bottom: 92px;
-    }
+}
 
 @media screen and (min-width: $bp-desktop-hd) and (max-width: 1799px) {
     .description__hello,
@@ -99,5 +99,35 @@
     
     .description__profession {
         margin-bottom: 35px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .description__hello,
+    .description__profession,
+    .description__note {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 600;
+        opacity: 0.5;
+    }
+    
+    .description__name {
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 700;
+        margin-right: 20px;
+    }
+
+    .description__hello {
+        margin-bottom: 9px;
+    }
+    
+    .description__name {
+        margin-bottom: 38px;
+    }
+    
+    .description__profession {
+        margin-bottom: 38px;
     }
 }

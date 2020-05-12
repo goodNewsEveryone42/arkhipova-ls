@@ -151,3 +151,52 @@
         margin-top: 110px;
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .skills__frontend-title,
+    .skills__workflow-title {
+        font-size: 18px;
+        line-height: 48px;
+        font-weight: 700;
+}
+
+    .skills__wrap {
+        margin-top: 88px;
+        margin-bottom: 82px;
+    }
+
+    .skills__container {
+        position: unset;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skills__description {
+        margin-left: auto;
+        order: 0;
+    }
+
+    .skills__frontend-workflow {
+        margin-top: 36px;
+        margin-left: unset;
+        display: flex;
+        flex-direction: column;
+        order: 1;
+    }
+
+    .skills__image {
+        position: unset;
+        order: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 110px;
+    }
+
+    .skills__frontend {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 38px;
+    }
+}
