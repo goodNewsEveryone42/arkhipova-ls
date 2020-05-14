@@ -11,41 +11,41 @@
         .skills__image
           .skills-img
             +image("content/backpack.png", "skills-img__image", "фотография рюкзака")
-        .skills__frontend-workflow
-          #skills-component
+        
+        #skills-component
             
   section.my-work
     .container
       h2.my-work__title Мои работы
-    .my-work__wrap
-
-      .my-work__slider
-        .slider-preview
-          +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
-          .slider-preview__slides
-            .slider-preview__slide
-              +image("content/slide2.jpg", "slider-preview__image", "превью работ в слайдере")
-            .slider-preview__slide
-              +image("content/slide1.jpg", "slider-preview__image", "превью работ в слайдере")
-            .slider-preview__slide
-              +image("content/slide4.jpg", "slider-preview__image", "превью работ в слайдере")
-            .slider-preview__slide
-              +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
-            .slider-preview__slide
-              +image("content/slide3.jpg", "slider-preview__image", "превью работ в слайдере")
-          .slider-preview__btn
-            button(type="button").slider-preview__btn-up
-              span >
-            button(type="button").slider-preview__btn-down
-              span >
-        .slider-preview__counts
-          .slider-preview__count 1
-          .slider-preview__count.slider-preview__count--active 2
-          .slider-preview__count 3
-          .slider-preview__count 4
-          .slider-preview__count 5
+    .container-custom
+      .my-work__wrap
+        .my-work__slider
+          .slider-preview
+            +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
+            .slider-preview__slides
+              .slider-preview__slide
+                +image("content/slide2.jpg", "slider-preview__image", "превью работ в слайдере")
+              .slider-preview__slide
+                +image("content/slide1.jpg", "slider-preview__image", "превью работ в слайдере")
+              .slider-preview__slide
+                +image("content/slide4.jpg", "slider-preview__image", "превью работ в слайдере")
+              .slider-preview__slide
+                +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
+              .slider-preview__slide
+                +image("content/slide3.jpg", "slider-preview__image", "превью работ в слайдере")
+            .slider-preview__btn
+              button(type="button").slider-preview__btn-up
+                span >
+              button(type="button").slider-preview__btn-down
+                span >
+          .slider-preview__counts
+            .slider-preview__count 1
+            .slider-preview__count.slider-preview__count--active 2
+            .slider-preview__count 3
+            .slider-preview__count 4
+            .slider-preview__count 5
           
-      .container
+      .container-mobile
         .my-work__site
           .site-school
             - var items = ["HTML", "CSS", "Javascript"];

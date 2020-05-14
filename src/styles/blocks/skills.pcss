@@ -2,11 +2,14 @@
     margin-bottom: 138px;
 }
 
-.skills__frontend-title,
-.skills__workflow-title {
+.skills-row__title {
     font-size: 24px;
     line-height: 48px;
     font-weight: 700;
+}
+
+.skills-row__list {
+    display: flex;
 }
 
 .skills__wrap {
@@ -37,12 +40,8 @@
     flex-direction: column;
 }
 
-.skills__frontend-title {
+.skills__title {
     margin-bottom: 20px;
-}
-
-.skills__workflow-title {
-    margin-bottom: 19px;
 }
 
 .skills__frontend {
@@ -108,19 +107,14 @@
         align-items: center;
     }
 
-    .skills__frontend-title,
-    .skills__workflow-title {
+    .skills__title {
         font-size: 20px;
         line-height: 48px;
         font-weight: 700;
     }
 
-    .skills__frontend-title {
+    .skills__title {
         margin-bottom: 10px;
-    }
-
-    .skills__workflow-title {
-        margin-bottom: 5px;
     }
 
     .skills__container {
@@ -157,8 +151,7 @@
         margin-bottom: 80px;
     }
 
-    .skills__frontend-title,
-    .skills__workflow-title {
+    .skills__title {
         font-size: 18px;
         line-height: 48px;
         font-weight: 700;
@@ -197,10 +190,12 @@
         margin-top: 60px;
     }
 
-    .skills__frontend {
+    .skills__title {
+        min-width: 320px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         margin-bottom: 54px;
     }
 

@@ -2,13 +2,13 @@
     display: flex;
 }
 
-.frontend__item {
+.skills-row__item {
     display: flex;
     position: relative;
     width: 165px;
     height: 160px;
 
-    &-title {
+    .skill__circle-text {
         font-size: 18px;
         font-weight: 700;
         opacity: 0.5;
@@ -29,7 +29,7 @@
 }
 
 @media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
-    .frontend__item {
+    .skills-row__item {
         width: 165px;
         height: 160px;
         margin-right: 12px;
@@ -62,10 +62,11 @@
 
     .frontend {
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
-    .frontend__item {
+    .skills-row__item {
         width: 129px;
         height: 129px;
         margin-right: 0px;

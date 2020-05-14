@@ -5,10 +5,15 @@
 }
 
 .header__menu-popup {
-    width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header__btn-close {
+    display: none;
+    width: 30px;
+    height: 30px;
 }
 
 .header__hidden-socials {
@@ -69,7 +74,19 @@
 
 @media screen and (min-width: 320px) and (max-width: $bp-phones) {
     .header__menu-popup {
-        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        min-width: 320px;
+        display: block;
+        background-color: #ffffff;
+    }
+
+    .header__btn-close {
+        display: block;
+        width: 30px;
+        height: 30px;
     }
 
     .header__hamburger {
