@@ -15,10 +15,13 @@
                     a(href="" target="_blank").socials-hidden__link
                       +icon(item, "socials-hidden__icon")
           .header__hamburger
-            button.header__hamburger-btn
+            button(type="button").header__hamburger-btn
               +icon("menu", "header__hamburger-btn-icon")
 
         .header__menu-popup
+          .header__btn-popup-close
+            button(type="button").header__btn-close
+              +icon("forbidden-mark", "header__btn-icon")
           .header__buttons
             nav.header-nav
               - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
