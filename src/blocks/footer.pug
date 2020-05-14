@@ -1,0 +1,36 @@
+footer
+  .container
+    .footer
+    
+      .footer__copyright
+        .copyright
+          p.copyright__date ©&nbsp;2020
+          p.copyright__text Анна #[br]Архипова#[br]
+            span  Личный сайт #[br]веб&nbsp;-&nbsp;разработчика
+
+      .footer__wrap
+
+        .footer__nav
+          .footer-nav
+            - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+            ul.footer-nav__list.footer-nav-list
+              each item in items
+                li.footer-nav-list__item
+                  a.footer-nav-list__link #{item}
+
+        .footer__description-quote
+          .footer__description
+            .footer-description
+              p.footer-description__note Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
+              - var icons = ["insta", "vk", "github"];
+            .footer__socials
+              ul.footer-socials
+                each item in icons
+                  li.footer-socials__item
+                    a(href="" target="_blank").footer-socials__link
+                      +icon(item, "footer-socials__icon")
+
+          .footer__quote
+            .quote
+              p.quote__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+              p.quote__autor Martin Golding

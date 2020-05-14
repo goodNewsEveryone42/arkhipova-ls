@@ -1,0 +1,51 @@
+.about-me
+  section.section-values.about-me__section-values
+    section.triangles.about-me__triangles
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.about-me__triangle
+        polygon(points="0,0 0,100 1000,100")
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.about-me__triangle
+        polygon(points="1000,0 1000,100 0,100")
+  .container
+
+    .about-me__slider
+      .slider-about-me
+        .slider-about-me__container-title
+          h3.slider-about-me__title Что обо мне говорят
+          .slider-about-me__btn
+            button(type="button").slider-about-me__btn-left <
+            button(type="button").slider-about-me__btn-right >
+            
+        .slider-about-me__container.slider-reviews
+          .slider-reviews__slide
+            .slider-reviews__wrap
+              +icon("quote", "slider-reviews__icon")
+              p.slider-review__feedback.slider-review__koval Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+              +image("content/koval.png", "slider-reviews__img-koval", "фотография основателя loftschol")
+              p.slider-review__name.slider-review__name-koval Ковальчук Дмитрий#[br]
+                span Основатель Loftschool
+          .slider-reviews__slide
+            .slider-reviews__wrap
+              +icon("quote", "slider-reviews__icon")
+              p.slider-review__feedback.slider-review__sabancev Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+              +image("content/sabancev.png", "slider-reviews__img-sabancev", "фотография преподавателя loftschol")
+              p.slider-review__name.slider-review__name-sabancev Владимир Сабанцев#[br]
+                span Преподаватель
+
+    .about-me__contact-me
+      .contact-me
+        h3.contact-me__title Связаться со мной
+        form.contact-me__search(action="#" method="get")
+          .contact-me__wrap
+            .contact-me__column
+              label(for="name") Введите ваше имя
+              input(type="text" id="name" name="name"  placeholder="Ковальчук Дмитрий")
+              +icon("user", "contact-me__icon-user")
+            .contact-me__column
+              label(for="email") Введите ваш email
+              input(type="email" id="email" name="email"  placeholder="loftschool@study.com")
+              +icon("envelope", "contact-me__icon-envelope")
+          .contact-me__column
+            label(for="comment") Сообщение к письму
+            textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
+            +icon("message", "contact-me__icon-message")
+          button(type="submit").contact-me__btn Отправить

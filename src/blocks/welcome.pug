@@ -1,0 +1,75 @@
+.welcome
+  .container
+
+    section.hero
+
+      header.header
+        p.header__logo АА
+        
+        .header__socials-hamburger
+          .header__hidden-socials
+            - var icons = ["insta", "vk", "github"];
+              ul.socials-hidden
+                each item in icons
+                  li.socials-hidden__item
+                    a(href="" target="_blank").socials-hidden__link
+                      +icon(item, "socials-hidden__icon")
+          .header__hamburger
+            button.header__hamburger-btn
+              +icon("menu", "header__hamburger-btn-icon")
+
+        .header__menu-popup
+          .header__buttons
+            nav.header-nav
+              - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+              ul.header-nav__list
+                each item in items
+                  li.header-nav__item
+                    a.header-nav__link #{item}
+          .header__socials
+            - var icons = ["insta", "vk", "github"];
+            ul.socials
+              each item in icons
+                li.socials__item
+                  a(href="" target="_blank").socials__link
+                    +icon(item, "socials__icon")
+
+      .hero__content
+        .user-data
+          .user-data__description Личный сайт #[br]веб разработчика
+          .user-data__name Анна #[br]Архипова
+      .hero__bottom-btn
+        a(href="").scroll-down-btn Скролл
+          +icon("scroll", "scroll-down-btn__icon")
+        
+    section.whoami
+      .whoami__wrap
+        .whoami__info
+          .info
+            .info-img
+              .info-img__avatar
+                +image("content/user.jpg", "info-img__image", "фотография разработчика")
+            table.info__table
+              tr
+                td Проживаю:
+                td Хабаровск
+              tr
+                td Возраст
+                td 24 года
+              tr
+                td Родился
+                td 28 сентября 1995
+
+        .whoami__description
+          .description
+            p.description__hello Привет, меня зовут
+            p.description__name Анна Архипова
+            p.description__profession Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            p.description__note Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+  
+  section.section-values.welcome__section-value
+    section.triangles.welcome__triangles
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.welcome-triangle
+        polygon(points="0,0 0,100 1000,100")
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.welcome-triangle
+        polygon(points="1000,0 1000,100 0,100")

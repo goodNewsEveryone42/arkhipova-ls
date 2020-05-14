@@ -1,0 +1,57 @@
+.skills
+  .container
+    .skills__wrap
+      .skills__container
+        .skills__description
+          .skills-title
+            h2.skills-title__heading 
+              span Чем я могу быть полезна вам
+            p.skills-title__note 
+              span Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .skills__image
+          .skills-img
+            +image("content/backpack.png", "skills-img__image", "фотография рюкзака")
+        .skills__frontend-workflow
+          #skills-component
+            
+  section.my-work
+    .container
+      h2.my-work__title Мои работы
+    .my-work__wrap
+
+      .my-work__slider
+        .slider-preview
+          +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
+          .slider-preview__slides
+            .slider-preview__slide
+              +image("content/slide2.jpg", "slider-preview__image", "превью работ в слайдере")
+            .slider-preview__slide
+              +image("content/slide1.jpg", "slider-preview__image", "превью работ в слайдере")
+            .slider-preview__slide
+              +image("content/slide4.jpg", "slider-preview__image", "превью работ в слайдере")
+            .slider-preview__slide
+              +image("content/slide0.jpg", "slider-preview__image", "превью работ в слайдере")
+            .slider-preview__slide
+              +image("content/slide3.jpg", "slider-preview__image", "превью работ в слайдере")
+          .slider-preview__btn
+            button(type="button").slider-preview__btn-up
+              span >
+            button(type="button").slider-preview__btn-down
+              span >
+        .slider-preview__counts
+          .slider-preview__count 1
+          .slider-preview__count.slider-preview__count--active 2
+          .slider-preview__count 3
+          .slider-preview__count 4
+          .slider-preview__count 5
+          
+      .container
+        .my-work__site
+          .site-school
+            - var items = ["HTML", "CSS", "Javascript"];
+            ul.work-site
+              each item in items
+                li.work-site__item #{item}
+            p.site-school__name Сайт школы образования
+            p.site-school__description Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            a.site-school__link Посмотреть сайт
