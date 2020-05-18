@@ -20,6 +20,14 @@ module.exports = (env, argv) => {
     ]
   };
 
+  const html ={
+    test: /\.html$/,
+    loader: 'html-loader',
+    options: {
+      attrs: ['img:src', 'source:srcset']
+    }
+  }
+
   const vue = {
     test: /\.vue$/,
     loader: "vue-loader"
@@ -78,7 +86,7 @@ module.exports = (env, argv) => {
         use: ["pug-plain-loader"]
       },
       {
-        use: ["pug-loader"]
+        use: [ "pug-loader"]
       }
     ]
   };
@@ -95,7 +103,7 @@ module.exports = (env, argv) => {
       chunkFilename: "[chunkhash].js"
     },
     module: {
-      rules: [pcss, vue, js, files, svg, pug]
+      rules: [pcss, html, vue, js, files, svg, pug]
     },
     resolve: {
       alias: {

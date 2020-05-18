@@ -1,10 +1,27 @@
 .about-me
+  .parallax-buddha
+      .parallax-buddha__cloud-back.parallax-buddha__layer
+        +image("content/cloud-back.png")
+      .parallax-buddha__mountain-buddha.parallax-buddha__layer
+        +image("content/mountain-buddha.png")
+      .parallax-buddha__buddha.parallax-buddha__layer
+        +image("content/buddha.png")
+      .parallax-buddha__cloud-front.parallax-buddha__layer
+        +image("content/cloud-front.png")
+      .parallax-buddha__cloud-front-two.parallax-buddha__layer
+        +image("content/cloud-front.png")
+      .parallax-buddha__cloud-buddha.parallax-buddha__layer
+        +image("content/cloud-buddha.png")
+      .parallax-buddha__cloud-front-bottom.parallax-buddha__layer
+        +image("content/cloud-front-bottom.png")
   section.section-values.about-me__section-values
     section.triangles.about-me__triangles
       svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.about-me__triangle
         polygon(points="0,0 0,100 1000,100")
       svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.about-me__triangle
         polygon(points="1000,0 1000,100 0,100")
+    
+
   .container
 
     .about-me__slider

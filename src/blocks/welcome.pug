@@ -1,75 +1,93 @@
 .welcome
+  .parallax-baloon
+    .parallax-baloon__layer-sky.parallax-baloon__layer(data-speed="0.1")
+      picture.parallax-baloon__img
+        source(media="(min-width:1800px)" srcset=require("images/content/sky.png"))
+    //-   +image("content/sky.png", "parallax-baloon__sky", "изображение неба")
+    //- .parallax-baloon__layer-mountain.parallax-baloon__layer(data-speed="0.3")
+    //-   +image("content/mountain.png", "parallax-baloon__mountain", "изображение гор")
+    //- .parallax-baloon__layer-baloon.parallax-baloon__layer(data-speed="0.16")
+    //-   +image("content/baloon.png", "parallax-baloon__baloon", "изображение воздушного шара")
+    //- .parallax-baloon__layer-cloud.parallax-baloon__layer(data-speed="0.2")
+    //-   +image("content/cloud.png", "parallax-baloon__cloud", "изображение облака")
+    //- .parallax-baloon__layer-man.parallax-baloon__layer(data-speed="0.23")
+    //-   +image("content/man.png", "parallax-baloon__man", "изображение человека")
+    //- .parallax-baloon__layer-mountain-near.parallax-baloon__layer(data-speed="0.25")
+    //-   +image("content/mountain-near.png", "parallax-baloon__mountain-near", "изображение передних гор")
+    //- .parallax-baloon__layer-white.parallax-baloon__layer(data-speed="0.28")
+    //-   +image("content/white.png", "parallax-baloon__white", "изображение передних облаков")
+
   .container
+    .welcome__wrap
+      section.hero
 
-    section.hero
+        header.header
+          p.header__logo АА
+          .header__socials-hamburger
+            .header__hidden-socials
+              - var icons = ["insta", "vk", "github"];
+                ul.socials-hidden
+                  each item in icons
+                    li.socials-hidden__item
+                      a(href="" target="_blank").socials-hidden__link
+                        +icon(item, "socials-hidden__icon")
+            .header__hamburger
+              button(type="button").header__hamburger-btn
+                +icon("menu", "header__hamburger-btn-icon")
 
-      header.header
-        p.header__logo АА
-        
-        .header__socials-hamburger
-          .header__hidden-socials
-            - var icons = ["insta", "vk", "github"];
-              ul.socials-hidden
+          .header__menu-popup
+            .header__btn-popup-close
+              button(type="button").header__btn-close
+                +icon("forbidden-mark", "header__btn-icon")
+            .header__buttons
+              nav.header-nav
+                - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                ul.header-nav__list
+                  each item in items
+                    li.header-nav__item
+                      a.header-nav__link #{item}
+
+            .header__socials
+              - var icons = ["insta", "vk", "github"];
+              ul.socials
                 each item in icons
-                  li.socials-hidden__item
-                    a(href="" target="_blank").socials-hidden__link
-                      +icon(item, "socials-hidden__icon")
-          .header__hamburger
-            button(type="button").header__hamburger-btn
-              +icon("menu", "header__hamburger-btn-icon")
+                  li.socials__item
+                    a(href="" target="_blank").socials__link
+                      +icon(item, "socials__icon")
 
-        .header__menu-popup
-          .header__btn-popup-close
-            button(type="button").header__btn-close
-              +icon("forbidden-mark", "header__btn-icon")
-          .header__buttons
-            nav.header-nav
-              - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
-              ul.header-nav__list
-                each item in items
-                  li.header-nav__item
-                    a.header-nav__link #{item}
-          .header__socials
-            - var icons = ["insta", "vk", "github"];
-            ul.socials
-              each item in icons
-                li.socials__item
-                  a(href="" target="_blank").socials__link
-                    +icon(item, "socials__icon")
+        .hero__content
+          .user-data
+            .user-data__description Личный сайт #[br]веб разработчика
+            .user-data__name Анна #[br]Архипова
+        .hero__bottom-btn
+          a(href="").scroll-down-btn Скролл
+            +icon("scroll", "scroll-down-btn__icon")
+          
+      section.whoami
+        .whoami__wrap
+          .whoami__info
+            .info
+              .info-img
+                .info-img__avatar
+                  +image("content/user.jpg", "info-img__image", "фотография разработчика")
+              table.info__table
+                tr
+                  td Проживаю:
+                  td Хабаровск
+                tr
+                  td Возраст
+                  td 24 года
+                tr
+                  td Родился
+                  td 28 сентября 1995
 
-      .hero__content
-        .user-data
-          .user-data__description Личный сайт #[br]веб разработчика
-          .user-data__name Анна #[br]Архипова
-      .hero__bottom-btn
-        a(href="").scroll-down-btn Скролл
-          +icon("scroll", "scroll-down-btn__icon")
-        
-    section.whoami
-      .whoami__wrap
-        .whoami__info
-          .info
-            .info-img
-              .info-img__avatar
-                +image("content/user.jpg", "info-img__image", "фотография разработчика")
-            table.info__table
-              tr
-                td Проживаю:
-                td Хабаровск
-              tr
-                td Возраст
-                td 24 года
-              tr
-                td Родился
-                td 28 сентября 1995
-
-        .whoami__description
-          .description
-            p.description__hello Привет, меня зовут
-            p.description__name Анна Архипова
-            p.description__profession Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-            p.description__note Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-  
+          .whoami__description
+            .description
+              p.description__hello Привет, меня зовут
+              p.description__name Анна Архипова
+              p.description__profession Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p.description__note Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    
   section.section-values.welcome__section-value
     section.triangles.welcome__triangles
       svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.welcome-triangle
