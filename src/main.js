@@ -7,3 +7,5 @@ import "./scripts/skills";
 import "./scripts/works";
 import "./scripts/popup-menu";
 import "./scripts/parallax-baloon";
+import "./scripts/parallax-buddha";
+import "./scripts/review";

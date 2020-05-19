@@ -2,12 +2,14 @@
     position: relative;
 }
 
-// .parallax-baloon__layer img {
-//     object-fit: cover;
-// }
+.parallax-baloon {
+    width: 100%;
+}
 
-.parallax-baloon__img source {
-    width: 100%
+.parallax-baloon__layer,
+.parallax-baloon__img,
+.parallax-baloon__img img {
+    width: inherit;
 }
 
 .parallax-baloon__layer-sky {
@@ -22,7 +24,8 @@
 .parallax-baloon__layer-baloon {
     position: absolute;
     top: 480px;
-    right: 420px;
+    left: 50%;
+    margin-left: 287px;
     width: 190px;
     height: auto;
 }
@@ -51,5 +54,39 @@
 }
 
 @media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
-    
+    .parallax-baloon__layer-baloon  {
+        top: 470px;
+        margin-left: 405px;
+    }
+
+    .parallax-baloon__layer-man {
+        position: absolute;
+        top: 650px;
+        left: -160px;
+        // width: 1170px;
+    }
+    .parallax-baloon__layer-mountain-near {
+        position: absolute;
+        top: 470px;
+        right: -420px;
+        width: 1250px;
+    }
+
+    .parallax-baloon__layer-white {
+        position: absolute;
+        top: 900px;
+    }
+
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .parallax-baloon {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .parallax-baloon {
+        display: none;
+    }
 }

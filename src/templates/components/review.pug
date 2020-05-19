@@ -1,0 +1,34 @@
+script(type="text/x-template")#review
+  .about-me__slider
+    .slider-about-me
+      titleBtn
+      slider(
+        :slider="slider"
+      )
+
+script(type="text/x-template")#review-title-btn
+  .slider-about-me__container-title
+    h3.slider-about-me__title Что обо мне говорят
+    buttons
+
+
+script(type="text/x-template")#review-btn
+  .slider-about-me__btn
+    button(type="button").slider-about-me__btn-left <
+    button(type="button").slider-about-me__btn-right >
+
+script(type="text/x-template")#review-slider-container
+  .slider-about-me__container.slider-reviews
+    .slider-review__wrap(v-for="slider in slides" :key="slider.id")
+      slide(
+        
+      )
+
+script(type="text/x-template")#review-slider-items
+  .slider-reviews__slide
+    .slider-reviews__wrap
+      +icon("quote", "slider-reviews__icon")
+      p.slider-review__feedback.slider-review__koval 
+      +image("content/koval.png", "slider-reviews__img-koval", "фотография основателя loftschol")
+      p.slider-review__name.slider-review__name-koval #[br] 
+        span

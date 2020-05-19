@@ -2,20 +2,46 @@
   .parallax-baloon
     .parallax-baloon__layer-sky.parallax-baloon__layer(data-speed="0.1")
       picture.parallax-baloon__img
+        source(media="(min-width:2560px)" srcset=require("images/content/sky-desktophd.png"))
         source(media="(min-width:1800px)" srcset=require("images/content/sky.png"))
-    //-   +image("content/sky.png", "parallax-baloon__sky", "изображение неба")
-    //- .parallax-baloon__layer-mountain.parallax-baloon__layer(data-speed="0.3")
-    //-   +image("content/mountain.png", "parallax-baloon__mountain", "изображение гор")
-    //- .parallax-baloon__layer-baloon.parallax-baloon__layer(data-speed="0.16")
-    //-   +image("content/baloon.png", "parallax-baloon__baloon", "изображение воздушного шара")
-    //- .parallax-baloon__layer-cloud.parallax-baloon__layer(data-speed="0.2")
-    //-   +image("content/cloud.png", "parallax-baloon__cloud", "изображение облака")
-    //- .parallax-baloon__layer-man.parallax-baloon__layer(data-speed="0.23")
-    //-   +image("content/man.png", "parallax-baloon__man", "изображение человека")
-    //- .parallax-baloon__layer-mountain-near.parallax-baloon__layer(data-speed="0.25")
-    //-   +image("content/mountain-near.png", "parallax-baloon__mountain-near", "изображение передних гор")
-    //- .parallax-baloon__layer-white.parallax-baloon__layer(data-speed="0.28")
-    //-   +image("content/white.png", "parallax-baloon__white", "изображение передних облаков")
+        source(media="(min-width:1200px)" srcset=require("images/content/sky-desktop.png"))
+        img(src="" alt="")
+    .parallax-baloon__layer-mountain.parallax-baloon__layer(data-speed="0.3")
+      picture.parallax-baloon__img
+        source(media="(min-width:2560px)" srcset=require("images/content/mountain.png"))
+        source(media="(min-width:1800px)" srcset=require("images/content/mountain.png"))
+        source(media="(min-width:1200px)" srcset=require("images/content/mountain-desktop.png"))
+        img(src="" alt="")
+    .parallax-baloon__layer-baloon.parallax-baloon__layer(data-speed="0.16")
+      picture.parallax-baloon__img
+        source(media="(min-width:2560px)" srcset=require("images/content/baloon.png"))
+        source(media="(min-width:1800px)" srcset=require("images/content/baloon.png"))
+        source(media="(min-width:1200px)" srcset=require("images/content/baloon.png"))
+        img(src="" alt="")
+    .parallax-baloon__layer-cloud.parallax-baloon__layer(data-speed="0.2")
+      picture.parallax-baloon__img
+        source(media="(min-width:2560px)" srcset=require("images/content/cloud.png"))
+        source(media="(min-width:1800px)" srcset=require("images/content/cloud.png"))
+        source(media="(min-width:1200px)" srcset=require("images/content/cloud-desktop.png"))
+        img(src="" alt="")
+    .parallax-baloon__layer-man.parallax-baloon__layer(data-speed="0.23")
+      picture.parallax-baloon__img
+        source(media="(min-width:2560px)" srcset=require("images/content/man.png"))
+        source(media="(min-width:1800px)" srcset=require("images/content/man.png"))
+        source(media="(min-width:1200px)" srcset=require("images/content/man.png"))
+        img(src="" alt="")
+    .parallax-baloon__layer-mountain-near.parallax-baloon__layer(data-speed="0.25")
+      picture.parallax-baloon__img
+        source(media="(min-width:2560px)" srcset=require("images/content/mountain-near.png"))
+        source(media="(min-width:1800px)" srcset=require("images/content/mountain-near.png"))
+        source(media="(min-width:1200px)" srcset=require("images/content/mountain-near.png"))
+        img(src="" alt="")
+    .parallax-baloon__layer-white.parallax-baloon__layer(data-speed="0.28")
+      picture.parallax-baloon__img
+        source(media="(min-width:2560px)" srcset=require("images/content/white.png"))
+        source(media="(min-width:1800px)" srcset=require("images/content/white.png"))
+        source(media="(min-width:1200px)" srcset=require("images/content/white-desktop.png"))
+        img(src="" alt="")
 
   .container
     .welcome__wrap

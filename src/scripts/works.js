@@ -95,6 +95,5 @@ new Vue({
     created() {
         const data = require("../data/works.json");
         this.works = this.makeArrWithRequareImages(data);
-        
     }
 });

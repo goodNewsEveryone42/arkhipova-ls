@@ -1,52 +1,56 @@
 .about-me
   .parallax-buddha
-      .parallax-buddha__cloud-back.parallax-buddha__layer
-        +image("content/cloud-back.png")
-      .parallax-buddha__mountain-buddha.parallax-buddha__layer
-        +image("content/mountain-buddha.png")
-      .parallax-buddha__buddha.parallax-buddha__layer
-        +image("content/buddha.png")
-      .parallax-buddha__cloud-front.parallax-buddha__layer
-        +image("content/cloud-front.png")
-      .parallax-buddha__cloud-front-two.parallax-buddha__layer
-        +image("content/cloud-front.png")
-      .parallax-buddha__cloud-buddha.parallax-buddha__layer
-        +image("content/cloud-buddha.png")
-      .parallax-buddha__cloud-front-bottom.parallax-buddha__layer
-        +image("content/cloud-front-bottom.png")
+      .parallax-buddha__cloud-back.parallax-buddha__layer(data-speed="0")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/cloud-back-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/cloud-back.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/cloud-back-desktop.png"))
+          img(src="" alt="")
+      .parallax-buddha__mountain-buddha.parallax-buddha__layer(data-speed="0.04")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/mountain-buddha-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/mountain-buddha.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/mountain-buddha.png"))
+          img(src="" alt="")
+      .parallax-buddha__buddha.parallax-buddha__layer(data-speed="0.01")
+         picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/buddha.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/buddha.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/buddha.png"))
+          img(src="" alt="")
+      .parallax-buddha__cloud-front.parallax-buddha__layer(data-speed="0.03")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/cloud-front-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/cloud-front.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/cloud-front-desktop.png"))
+          img(src="" alt="")
+      .parallax-buddha__cloud-buddha.parallax-buddha__layer(data-speed="0.015")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/cloud-buddha-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/cloud-buddha.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/cloud-buddha-desktop.png"))
+          img(src="" alt="")
+      .parallax-buddha__cloud-front-bottom.parallax-buddha__layer(data-speed="0.02")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/cloud-front-bottom-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/cloud-front-bottom.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/cloud-front-bottom-desktop.png"))
+          img(src="" alt="")
+      .parallax-buddha__cloud-back-bottom.parallax-buddha__layer
+        picture.parallax-buddha__img
+          source(media="(min-width:1800px)" srcset=require("images/content/back-bottom.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/back-bottom.png"))
+          img(src="" alt="")
   section.section-values.about-me__section-values
     section.triangles.about-me__triangles
       svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.about-me__triangle
         polygon(points="0,0 0,100 1000,100")
       svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.about-me__triangle
         polygon(points="1000,0 1000,100 0,100")
-    
 
   .container
 
-    .about-me__slider
-      .slider-about-me
-        .slider-about-me__container-title
-          h3.slider-about-me__title Что обо мне говорят
-          .slider-about-me__btn
-            button(type="button").slider-about-me__btn-left <
-            button(type="button").slider-about-me__btn-right >
-            
-        .slider-about-me__container.slider-reviews
-          .slider-reviews__slide
-            .slider-reviews__wrap
-              +icon("quote", "slider-reviews__icon")
-              p.slider-review__feedback.slider-review__koval Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-              +image("content/koval.png", "slider-reviews__img-koval", "фотография основателя loftschol")
-              p.slider-review__name.slider-review__name-koval Ковальчук Дмитрий#[br]
-                span Основатель Loftschool
-          .slider-reviews__slide
-            .slider-reviews__wrap
-              +icon("quote", "slider-reviews__icon")
-              p.slider-review__feedback.slider-review__sabancev Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-              +image("content/sabancev.png", "slider-reviews__img-sabancev", "фотография преподавателя loftschol")
-              p.slider-review__name.slider-review__name-sabancev Владимир Сабанцев#[br]
-                span Преподаватель
+    #review-component
 
     .about-me__contact-me
       .contact-me
