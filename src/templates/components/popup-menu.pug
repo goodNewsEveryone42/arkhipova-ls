@@ -13,7 +13,7 @@ script(type="text/x-template")#header
         button(type="button" @click="open").header__hamburger-btn
           +icon("menu", "header__hamburger-btn-icon")
 
-    .header__menu-popup
+    .header__menu-popup(ref="menuPopup")
       .header__menu-popup-container
         .header__btn-popup-close
           button(type="button" @click="close").header__btn-close

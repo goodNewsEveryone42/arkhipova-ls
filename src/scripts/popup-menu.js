@@ -6,13 +6,11 @@ new Vue({
 
   methods: {
     close() {
-      let menuPopup = this.getSelectorMainMenu();
-      menuPopup.style.display = 'none';
+      this.$refs.menuPopup.style.display = 'none';
     },
 
     open() {
-      let menuPopup = this.getSelectorMainMenu();
-      menuPopup.style.display = 'flex';
+      this.$refs.menuPopup.style.display = 'flex';
     },
 
     getSelectorMainMenu() {
