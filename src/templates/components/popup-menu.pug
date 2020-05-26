@@ -1,0 +1,35 @@
+script(type="text/x-template")#header
+  header.header
+    p.header__logo АА
+    .header__socials-hamburger
+      .header__hidden-socials
+        - var icons = ["insta", "vk", "github"];
+          ul.socials-hidden
+            each item in icons
+              li.socials-hidden__item
+                a(href="" target="_blank").socials-hidden__link
+                  +icon(item, "socials-hidden__icon")
+      .header__hamburger
+        button(type="button").header__hamburger-btn
+          +icon("menu", "header__hamburger-btn-icon")
+
+    .header__menu-popup
+      .header__menu-popup-container
+        .header__btn-popup-close
+          button(type="button" @:click="close").header__btn-close
+            +icon("forbidden-mark", "header__btn-icon")
+        .header__buttons
+          nav.header-nav
+            - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+            ul.header-nav__list
+              each item in items
+                li.header-nav__item
+                  a.header-nav__link #{item}
+
+        .header__socials
+          - var icons = ["insta", "vk", "github"];
+          ul.socials
+            each item in icons
+              li.socials__item
+                a(href="" target="_blank").socials__link
+                  +icon(item, "socials__icon")
