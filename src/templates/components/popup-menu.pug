@@ -10,13 +10,13 @@ script(type="text/x-template")#header
                 a(href="" target="_blank").socials-hidden__link
                   +icon(item, "socials-hidden__icon")
       .header__hamburger
-        button(type="button").header__hamburger-btn
+        button(type="button" @click="open").header__hamburger-btn
           +icon("menu", "header__hamburger-btn-icon")
 
     .header__menu-popup
       .header__menu-popup-container
         .header__btn-popup-close
-          button(type="button" @:click="close").header__btn-close
+          button(type="button" @click="close").header__btn-close
             +icon("forbidden-mark", "header__btn-icon")
         .header__buttons
           nav.header-nav

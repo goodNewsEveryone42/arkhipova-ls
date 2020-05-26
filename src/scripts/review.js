@@ -45,7 +45,6 @@ new Vue({
         let arrayMake = this.makeArraySlides();
         let counter = this.currentIndex++;
         console.log(counter);
-        // console.log(arrayMake.length - 1);
         for (let i = 0; i < arrayMake.length; i++) {
           if (counter === i) {
             arrayMake[counter].style.display = 'none';

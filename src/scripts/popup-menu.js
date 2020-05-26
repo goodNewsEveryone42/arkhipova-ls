@@ -5,9 +5,14 @@ new Vue({
   template: "#header",
 
   methods: {
-    close(event) {
-      console.log(event);
-      // this.getSelectorMainMenu.style.display = 'none';
+    close() {
+      let menuPopup = this.getSelectorMainMenu();
+      menuPopup.style.display = 'none';
+    },
+
+    open() {
+      let menuPopup = this.getSelectorMainMenu();
+      menuPopup.style.display = 'flex';
     },
 
     getSelectorMainMenu() {
