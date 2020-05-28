@@ -55,18 +55,18 @@
     .about-me__contact-me
       .contact-me
         h3.contact-me__title Связаться со мной
-        form.contact-me__search(action="#" method="get")
+        form.contact-me__search(action="#" method="get" id="form-contact")
           .contact-me__wrap
             .contact-me__column
               label(for="name") Введите ваше имя
-              input(type="text" id="name" name="name"  placeholder="Ковальчук Дмитрий")
+              input(type="text" id="name" name="name"  placeholder="Ковальчук Дмитрий" required)
               +icon("user", "contact-me__icon-user")
             .contact-me__column
               label(for="email") Введите ваш email
-              input(type="email" id="email" name="email"  placeholder="loftschool@study.com")
+              input(type="email" id="email" name="email"  placeholder="loftschool@study.com" required)
               +icon("envelope", "contact-me__icon-envelope")
           .contact-me__column
             label(for="comment") Сообщение к письму
-            textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
+            textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" required)
             +icon("message", "contact-me__icon-message")
           button(type="submit").contact-me__btn Отправить
