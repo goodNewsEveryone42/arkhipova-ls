@@ -335,7 +335,6 @@ export default {
 .form-group__skills {
   display: flex;
   justify-content: flex-end;
-  // width: 100%;
   padding-bottom: 35px;
 
   .form-group__skills-wrap {
@@ -391,6 +390,100 @@ export default {
   .skill-item__table {
     line-height: 32px;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    margin: 0 auto;
+    max-width: 768px;
+    width: 92.2%;
+  }
+
+  .about-me {
+    padding-top: 40px;
+  }
+
+  .about-me__wrap-title {
+    width: 395px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .about-me__bth-add-group {
+    font-size: 14px;
+  }
+
+  .form-group__btn {
+
+    button {
+      display: none;
+    }
+
+    .btn-pencil {
+      width: 27px;
+      height: 27px;
+      display: block;
+      background-color: transparent;
+    }
+  }
+
+  .form-group__name-group input {
+    border: none;
+  }
+
+  .form-group__input-container {
+    position: relative;
+  
+    label {
+      position: absolute;
+      display: block;
+      top: 11px;
+      right: 4px;
+      width: 15px;
+      height: 15px;
+      opacity: 0.3;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    margin: 0 auto;
+    min-width: 320px;
+    width: 100%;
+  }
+
+  .about-me__wrap-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+  }
+
+  .about-me__bth-add-group {
+    margin-left: -50px;
+  }
+
+  .about-me__bth-add-group::before {
+    top: 9px;
+    left: 50px;
+  }
+
+  .group-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .skill-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+
 }
 
 </style>

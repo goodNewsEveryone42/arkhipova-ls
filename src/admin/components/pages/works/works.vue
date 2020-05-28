@@ -17,11 +17,11 @@
               button(type="button").edit-work__btn-edit-preview Изменить превью
               .edit-work__form-text
                 label(for="new-group") Название
-                input(type="text" id="name-site" name="new-site")
+                input(type="text" id="name-site" name="new-site" required)
                 label(for="link-site") Ссылка
-                input(type="text" id="link-site" name="link-site")
+                input(type="text" id="link-site" name="link-site" required)
                 label(for="description") Описание
-                textarea(type="text" id="description" name="description")
+                textarea(type="text" id="description" name="description" required)
                 label(for="tag") Добавление тега
                 input(type="text" id="tag" name="tag")
                 ul.edit-work__list-tag.list-tag
@@ -404,5 +404,119 @@ export default {
   margin-right: 20px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    margin: 0 auto;
+    max-width: 768px;
+    width: 92.2%;
+  }
+
+  .edit-work__content-container {
+    width: 98%;
+    display: flex;
+  }
+
+  .edit-work__form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27px;
+  }
+
+  .edit-work__input-img-container {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .edit-work__upload-img {
+    width: 100%;
+    height: 261px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dee4ed;
+    border: 1px dashed #000000;
+  }
+
+  
+  .edit-work__btn-edit-preview {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .edit-work__form-text {
+    width: 100%;
+  }
+
+  .edit-work__btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    margin: 0 auto;
+    min-width: 320px;
+    width: 100%;
+  }
+
+  .edit-work__input-img-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .edit-work__upload-img {
+    width: 100%;
+    height: 261px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dee4ed;
+    border: 1px dashed #000000;
+  }
+
+  .edit-work__form-text {
+    width: 100%;
+  }
+
+
+  .new-work {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .form-review {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .form-review__input-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-bottom: 0px;
+  }
+
+  .edit-review__new-review {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
 
 </style>

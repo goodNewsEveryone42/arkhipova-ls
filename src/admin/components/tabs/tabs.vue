@@ -59,4 +59,22 @@ export default {
   border-bottom: 3px solid #383bcf;
 }
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    margin: 0 auto;
+    min-width: 320px;
+    width: 100%;
+  }
+  
+  .tabs__link {
+    line-height: 36px;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 17px;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+}
+
 </style>

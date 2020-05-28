@@ -349,4 +349,121 @@ export default {
   margin-right: 15px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+  .container {
+    margin: 0 auto;
+    max-width: 768px;
+    width: 92.2%;
+  }
+  .add-review__title {
+    margin-bottom: 45px;
+  }
+
+  .form-review__input-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-bottom: 30px;
+  }
+
+  .edit-review__container {
+    width: 92%;
+  }
+
+  .form-review__input-container {
+    width: 64%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+
+    textarea {
+      height: 148px;
+    }
+  }
+
+  .form-review__input-column {
+    width: 69%;
+  }
+
+  .form-review__input-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-bottom: 0px;
+
+    input:nth-of-type(1) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .form-review__btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-bottom: 32px;
+  }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    margin: 0 auto;
+    min-width: 320px;
+    width: 100%;
+  }
+
+  .add-review__title {
+    margin-bottom: 45px;
+  }
+
+  .form-review__input-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-bottom: 30px;
+  }
+
+  .edit-review__container {
+    width: 92%;
+  }
+
+  .form-review__input-container {
+    width: 64%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+
+    textarea {
+      height: 148px;
+    }
+  }
+
+  .form-review__input-column {
+    width: 69%;
+  }
+
+  .form-review__input-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-bottom: 0px;
+
+    input:nth-of-type(1) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .form-review__btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-bottom: 32px;
+  }
+}
+
 </style>

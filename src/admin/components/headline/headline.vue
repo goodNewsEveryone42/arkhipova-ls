@@ -73,5 +73,34 @@ export default {
     align-items: inherit;
   }
 
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    margin: 0 auto;
+    min-width: 320px;
+    width: 100%;
+  }
+
+  .header__description {
+    width: 100%;
+    margin-left: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: baseline;
+  }
+
+  .header__name-panel {
+    width: unset;
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: inherit;
+  }
+
+  .header__name-page {
+    display: none;
+  }
+  }
+
 
 </style>
