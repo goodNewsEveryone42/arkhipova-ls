@@ -1,23 +1,18 @@
 <template lang="pug">
   .root
     .root-container
-      template
-        headline(
-          userpic="https://picsum.photos/200"
-          username="Анна Архипова"
-        )
-        tabs(
-          @tabChanged="handleChange"
-        )
-      .container
-        main.content-container
-          router-view
+      router-view(name="headline")
+      router-view(name="tabs")
+    .container
+      main.content-container
+        router-view
+    router-view(name="login")
 </template>
 
 <script>
   import headline from "./components/headline";
   import tabs from "./components/tabs";
-  
+  import login from "./components/login";
 
   export default {
     components: {
@@ -26,6 +21,8 @@
     },
     methods: {
      handleChange(tab) {
+      this.activeTabId = tab.id;
+      this.$emit("tabChanged", tab);
       this.$router.push(tab.href);
     }
   }

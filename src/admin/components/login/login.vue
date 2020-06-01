@@ -1,9 +1,10 @@
 <template lang="pug">
   .login-container
     .login-img-wrapper
-      img(:src="background")
+      img(src="src/admin/images/contents/baloon.jpg")
+      .login-img-back
     .login
-      .container
+      .login__container
         .login__btn-close
           button(type="button").btn-close
             <svg x="0px" y="0px" viewBox="0 0 174.239 174.239" style="enable-background:new 0 0 174.239 174.239;" xml:space="preserve">
@@ -15,14 +16,14 @@
             form(
               action="" 
               id="login-form"
-              @submit="checkForm"
+              @submit.prevent="login"
               ).login-form
               .login-form__input
-                label Логин
-                input(type="text" name="login" id="login" required placeholder="terminator")
+                label(for="login-name") Логин
+                input(type="text" name="login-name" id="login-name" v-model="user.name" required)
               .login-form__input
                 label(for="password") Пароль
-                input(type="password" name="password" id="password" required placeholder="terminator")
+                input(type="password" name="password" id="password" v-model="user.password" required)
               .login-form__btn
                 button(type="submit") Отправить
 
@@ -37,23 +38,25 @@
 </template>
 
 <script>
-export default {
-  props: ["background"],
-  data() {
-    return {
-      login: null,
-      password: null
-  }
-},
-  methods: {
-    checkForm(event) {
-      if (this.login && this.password) {
-        return true;
-      }
+import axios from "axios";
+const baseUrl = "https://webdev-api.loftschool.com";
 
-      else if (!this.login) {
-        console.log("укажи имя")
-      }
+export default {
+
+  props: ["background"],
+  data: () => ({
+    user: {
+      name: "",
+      password: "",
+    }
+  }),
+  methods: {
+    login() {
+      
+      axios.post(baseUrl + '/login', this.user).then(response => {
+        console.log(response.data)
+      })
+      console.log(this.user)
     }
   }
 
@@ -65,10 +68,9 @@ export default {
 
 .login-title {
   font-size: 36px;
-  line-height: 60px;
   flex-wrap: 600;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
 }
 
 .login-form label {
@@ -76,48 +78,63 @@ export default {
   line-height: 30px;
   font-weight: 600;
   opacity: 0.3;
-  margin-left: 40px;
+  margin-left: 47px;
 }
 
-.login__btn-close{
+.login__btn-close {
 display: flex;
 justify-content: flex-end;
+margin-top: 20px;
 }
 
 .btn-close {
-  width: 25px;
-  height: 25px;
-  margin-top: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 .login-container {
   position: relative;
-  width: 1800px;
+  width: 100%;
   height: 100vh;
   background-color: #ffffff;
 }
 
+.login-img-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #414c63;
+  opacity: 0.9;
+}
+
 .login-img-wrapper {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
+}
+
+.login-img-wrapper img {
+  width: 100%;
+  height: 100%;
 }
 
 .login {
   position: absolute;
   display: flex;
   justify-content: center;
-  width: 31.4%;
+  width: 565px;
   z-index: 2;
-  top: 325px;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
 }
 
 
-.container {
-  width: 95%;
+.login__container {
+  width: 87%;
 }
 
 .login-wrapper-center {
@@ -148,6 +165,7 @@ justify-content: flex-end;
 .login-form__btn {
   display: flex;
   justify-content: center;
+   margin-bottom: 60px;
 }
 
 .login-form button {
@@ -160,10 +178,10 @@ justify-content: flex-end;
   height: 80px;
   background: linear-gradient(90deg, #8002f2, #4a00ed);
   border-radius: 40px 0 40px 0;
-  margin-bottom: 65px;
 }
 
 .login-error {
+  display: none;
   position: absolute;
   z-index: 3;
   bottom: 0;
@@ -198,6 +216,51 @@ justify-content: flex-end;
   width: 25px;
   height: 25px;
   fill: #ffffff;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .login {
+    width: 565px;
+    z-index: 2;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .login-title {
+  font-size: 30px;
+  flex-wrap: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+  .login {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: unset;
+  }
+
+  .login-img-wrapper {
+  display: none;
+}
+
+.login__btn-close {
+  margin-top: 27px;
+  margin-bottom: 102px;
+}
+
+.login-wrapper {
+  width: 95%;
+}
+
+.login-form input {
+  height: 65px;
+  margin-bottom: 30px;
+}
+
+.login-form__btn {
+  margin-top: 10px;
+}
 }
 
 

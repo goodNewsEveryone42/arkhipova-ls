@@ -9,7 +9,6 @@ export const defaultView = () => ({
   components: {login},
   template: `
     <login
-      background="./images/content/baloon.png"
     />
   `
 });

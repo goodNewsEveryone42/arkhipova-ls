@@ -30,7 +30,8 @@ export default {
     handleChange(tab) {
       this.activeTabId = tab.id;
       this.$emit("tabChanged", tab);
-    }
+      this.$router.push(tab.href);
+    },
   }
 }
 </script>
