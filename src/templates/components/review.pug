@@ -2,11 +2,9 @@ script(type="text/x-template")#review
   .about-me__slider
     .slider-about-me
       titleBtn(
-        @switch="handleClick"
       )
       slider(
         :slides="slides"
-        :currentIndex="currentIndex"
         )
 script(type="text/x-template")#review-title-btn
   .slider-about-me__container-title
@@ -17,20 +15,12 @@ script(type="text/x-template")#review-title-btn
 script(type="text/x-template")#review-slider-container
   .slider-about-me__container.slider-reviews
     .slider-about-me__wrapper
-      .slider-review__container(
-        v-for="slide in slides" :key="slide.id"
-        
-        )
-        slide(
-          :slides="slides",
-          :slide="slide",
-          :currentIndex="currentIndex"
-        )
-script(type="text/x-template")#review-slider-items
-  .slider-reviews__slide
-    .slider-reviews__wrap
-      +icon("quote", "slider-reviews__icon")
-      p.slider-review__feedback.slider-review__koval {{slide.desc}}
-      img(:src="slide.photo")
-      p.slider-review__name.slider-review__name-koval {{slide.name}}#[br] 
-        span {{slide.position}}
+      Carousel().vue-carousel
+        Slide(v-for="slide in slides" :key="slide.id").slider-review__container
+          .slider-reviews__slide
+            .slider-reviews__wrap
+              +icon("quote", "slider-reviews__icon")
+              p.slider-review__feedback.slider-review__koval {{slide.desc}}
+              img(:src="slide.photo")
+              p.slider-review__name.slider-review__name-koval {{slide.name}}#[br] 
+                span {{slide.position}}
