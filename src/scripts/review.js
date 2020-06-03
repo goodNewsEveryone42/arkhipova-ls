@@ -3,7 +3,8 @@ import { Carousel, Slide } from 'vue-carousel';
 
 
 const titleBtn = {
-  template: "#review-title-btn"
+  template: "#review-title-btn",
+
 }
 
 const slider = {
@@ -28,6 +29,16 @@ new Vue({
   data() {
     return {
       slides: [],
+    }
+  },
+
+  methods: {
+    handleCarouselNav() {
+      if (next) {
+        const next = document.querySelector(".VueCarousel-navigation-next");
+        next.style.display = 'none';
+      }
+      
     }
   },
 
