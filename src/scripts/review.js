@@ -13,7 +13,7 @@ const slider = {
     Slide,
     Carousel
   },
-  props: ["slides"]
+  props: ["slides", "nextLabel", "prevLabel"]
 }
 
 new Vue({
@@ -32,15 +32,10 @@ new Vue({
     }
   },
 
-  methods: {
-    handleCarouselNav() {
-      if (next) {
-        const next = document.querySelector(".VueCarousel-navigation-next");
-        next.style.display = 'none';
-      }
-      
-    }
-  },
+  // computed: {
+  //   nextLabel: function() { return `<div class=".slider-about-me__btn-left"> < </div>` },
+  //   prevLabel: function() { return `<div class="slider-about-me__btn-right"> > </div>` },
+  // },
 
   created() {
     const data = require("../data/review.json");

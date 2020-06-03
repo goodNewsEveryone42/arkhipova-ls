@@ -1,22 +1,20 @@
 script(type="text/x-template")#review
   .about-me__slider
     .slider-about-me
-      titleBtn(
-        @carouselNav = "handleCarouselNav"
-      )
+      titleBtn
       slider(
         :slides="slides"
         )
 script(type="text/x-template")#review-title-btn
   .slider-about-me__container-title
     h3.slider-about-me__title Что обо мне говорят
-    .slider-about-me__btn
-      button(type="button" @click="$emit('carouselNav','prev')" ref="prev").slider-about-me__btn-left <
-      button(type="button" @click="$emit('carouselNav', 'next')" ref="next").slider-about-me__btn-right >
 script(type="text/x-template")#review-slider-container
   .slider-about-me__container.slider-reviews
     .slider-about-me__wrapper
       Carousel(:navigation-enabled="true"
+                navigation-next-label=">"
+                navigation-prev-label="<"
+                :loop="true"
                ).vue-carousel
         Slide(v-for="slide in slides" :key="slide.id").slider-review__container
           .slider-reviews__slide
