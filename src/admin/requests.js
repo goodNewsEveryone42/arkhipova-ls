@@ -6,8 +6,6 @@ if (!token) {
   console.warn("Токен отсутствует");
 }
 
-
-
 const $axios = axios.create({
   baseUrl: "https://webdev-api.loftschool.com",
   headers: {

@@ -69,6 +69,7 @@ export default {
     ...mapActions("categories", ["addCategory"]),
     createNewCategory() {
       this.addCategory(this.category.title);
+      this.category.title = "";
     }
   }
 }
