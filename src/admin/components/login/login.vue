@@ -14,7 +14,6 @@
           .login-wrapper
             h1.login-title Авторизация
             form(
-              action="" 
               id="login-form"
               @submit.prevent="login"
               ).login-form
@@ -51,12 +50,17 @@ export default {
     }
   }),
   methods: {
-    login() {
-      
-      axios.post(baseUrl + '/login', this.user).then(response => {
-        console.log(response.data)
-      })
-      console.log(this.user)
+
+    async login() {
+      try {
+        const response = await axios.post(baseUrl + '/login', this.user);
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        axios.defaults.headers["Autorization"] = `Bearer ${token}`
+        this.$router.replace("/");
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 

@@ -57,6 +57,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@babel/polyfill": "7.8.0",
     "axios": "^0.19.2",
     "normalize.css": "^8.0.1",
     "promptly": "^3.0.3",
@@ -65,6 +66,7 @@
     "signale": "^1.4.0",
     "vue": "^2.6.7",
     "vue-carousel": "^0.18.0",
-    "vue-router": "^3.0.2"
+    "vue-router": "^3.0.2",
+    "vuex": "^3.4.0"
   }
 }
