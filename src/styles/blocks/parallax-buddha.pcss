@@ -1,0 +1,101 @@
+.parallax-buddha {
+    position: relative;
+    width: 100%;
+}
+
+.parallax-buddha__layer {
+    position: absolute;
+}
+
+.parallax-buddha__cloud-back {
+    top: 0;
+}
+
+.parallax-buddha__layer,
+.parallax-buddha__img,
+.parallax-buddha__img img {
+    width: inherit;
+}
+
+.parallax-buddha__cloud-back img {
+    height: 1480px;
+}
+
+.parallax-buddha__mountain-buddha {
+    top: 230px;
+}
+
+.parallax-buddha__buddha {
+    width: 590px;
+    top: 382px;
+    left: 50%;
+    margin-left: 225px;
+}
+
+.parallax-buddha__cloud-front {
+    top: 580px;
+    left: 0px;
+}
+
+.parallax-buddha__cloud-buddha {
+    top: 670px;
+    right: -240px;
+}
+
+.parallax-buddha__cloud-front-bottom {
+    width: 2600px;
+    height: 600px;
+    top: 1050px;
+}
+
+.parallax-buddha__cloud-back-bottom {
+    top: 800px;
+}
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .parallax-buddha__mountain-buddha {
+        top: 400px;
+    }
+
+    .parallax-buddha__buddha {
+        width: 590px;
+        top: 355px;
+        right: 0;
+        margin-right: -205px;
+        left: auto;
+        margin-left: auto;
+    }
+
+    .parallax-buddha__cloud-front {
+        top: 500px;
+        left: 0px;
+    }
+
+    .parallax-buddha__cloud-buddha {
+        top: 620px;
+        right: 0;
+    }
+
+    .parallax-buddha__cloud-front-bottom {
+        width: 2600px;
+        height: 600px;
+        top: 850px;
+    }
+
+    .parallax-buddha__cloud-back-bottom {
+        top: 800px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .parallax-buddha {
+        display: none;
+    }
+
+    @media screen and (min-width: 320px) and (max-width: $bp-phones) {
+        .parallax-buddha {
+            display: none;
+        }
+    
+    }
+}

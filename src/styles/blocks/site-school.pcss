@@ -38,5 +38,76 @@
     background-image: svg-load("link.svg", fill="#4b6fd7");
     background-repeat: no-repeat;
 
-        fill: red;
+    fill: red;
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .site-school {
+        width: 495px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center
+    }
+
+    .site-school__name {
+        font-size: 35px;
+        line-height: 48px;
+        font-weight: 700;
+        margin-bottom: 22px;
+        white-space: nowrap;
+    }
+    
+    .site-school__description {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 600;
+        opacity: 0.7;
+        margin-bottom: 22px;
+    }
+
+    .site-school__description {
+        margin-bottom: 7px;
+    }
+
+    .site-school__link {
+        font-size: 16px;
+    }
+
+    .site-school__link::before {
+        top: 15px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .site-school__name {
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    
+    .site-school__description {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 600;
+        opacity: 0.7;
+        margin-bottom: 13px;
+    }
+
+    .site-school {
+        width: unset;
+        display: block;
+        text-align: start
+    }
+
+    .site-school__link {
+        position: relative;
+        font-size: 14px;
+        line-height: 48px;
+        font-weight: 700;
+        color: #586ed3;
+        margin-left: 32px;
+    }
 }

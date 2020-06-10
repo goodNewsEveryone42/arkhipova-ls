@@ -4,6 +4,26 @@
     align-items: center;
 }
 
+.header__menu-popup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__btn-close {
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+
+.header__hidden-socials {
+    display: none;
+}
+
+.header__hamburger {
+    display: none;
+}
+
 .header__logo {
     font-size: 36px;
     line-height: 30px;
@@ -12,5 +32,152 @@
 
 .header__buttons {
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 255px;
+}
+
+.header__menu-popup-container {
+    display: flex;
+}
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .header__menu-popup {
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header__buttons {
+    margin-left: 20px;
+    margin-right: 45px;
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .header__menu-popup {
+        position: absolute;
+        top: 0;
+        right: -6%;
+        z-index: 3;
+        min-width: 323px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #ffffff;
+    }
+
+    .header__btn-close {
+        display: block;
+    }
+
+    .header__menu-popup-container {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+
+    .header__btn-popup-close {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 65px;
+        margin-bottom: 140px;
+    }
+
+    .header__socials-hamburger {
+        width: 325px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__buttons {
+        margin: 0;
+        margin-bottom: 55px;
+    }
+
+    .header__hamburger {
+        display: block;
+    }
+
+    .header__hamburger-btn {
+        width: 29px;
+        height: 36px;
+        background-color: transparent;
+        fill: #464d62;
+    }
+
+    .header__hamburger-btn-icon {
+        width: 24px;
+        
+    }
+
+    .header__hidden-socials {
+        display: block;
+    }
+
+    .header__hamburger {
+        display: block;
+    }
+    
+    .header__hamburger-btn {
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        fill: #464d62;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .header__menu-popup {
+        position: absolute;
+        top: 0;
+        right: -12%;
+        z-index: 3;
+        min-width: 320px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #ffffff;
+    }
+
+    .header__menu-popup-container {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .header__btn-popup-close {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+        margin-bottom: 135px;
+    }
+
+    .header__btn-close {
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+
+    .header__buttons {
+        margin-bottom: 55px;
+    }
+
+    .header__hamburger {
+        display: block;
+    }
+
+    .header__hamburger-btn {
+        width: 29px;
+        height: 36px;
+        background-color: transparent;
+        fill: #464d62;
+    }
+
+    .header__hamburger-btn-icon {
+        width: 24px;
+        
+    }
 }

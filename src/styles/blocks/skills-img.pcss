@@ -1,12 +1,45 @@
 .skills-img {
-    position: absolute;
-    top: 242%;
-    left: -52.5%;
-    transform: translate(-18%, -50%);
     width: 712px;
     height: 627px;
 }
+
 .skills-img__image {
     width: 100%;
     height: auto;
+}
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .skills-img {
+        width: 712px;
+        height: 627px;
+    }
+
+    .skills-img__image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .skills-img {
+        width: 350px;
+        height: 320px;
+    }
+
+    .skills-img__image {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .skills-img {
+        width: 260px;
+        height: 240px;
+    }
+
+    .skills-img__image {
+        width: 100%;
+        height: 100%;
+    }
 }

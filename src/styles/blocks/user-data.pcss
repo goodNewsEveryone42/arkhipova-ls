@@ -1,11 +1,13 @@
 .user-data__description {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 31px;
+    font-weight: 700;
     opacity: 0.4;
+    margin-bottom: 22px;
 }
 
 .user-data__name {
-    font-size: 72px;
+    font-size: 71px;
     line-height: 60px;
     font-weight: 800;
 }
@@ -21,6 +23,63 @@
     text-align: center;
 }
 
-.user-data__description {
-    margin-bottom: 22px;
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .user-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+    }
+
+    .user-data__description {
+        text-align: end;
+        margin-right: 56px;
+    }
+
+    .user-data__name {
+        text-align: start;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .user-data__name {
+        font-size: 55px;
+        line-height: 55px;
+        font-weight: 800;
+    }
+
+    .user-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .user-data__description,
+    .user-data__name {
+        text-align: center;
+    }
+
+    .user-data__description {
+        margin-right: 0px;
+    }
+    
+    .user-data__description {
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .user-data__description {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+        opacity: 0.4;
+        margin-bottom: 4px;
+    }
+    
+    .user-data__name {
+        font-size: 36px;
+        line-height: 48px;
+        font-weight: 800;
+    }
 }

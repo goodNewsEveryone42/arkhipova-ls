@@ -1,0 +1,72 @@
+.about-me
+  .parallax-buddha
+      .parallax-buddha__cloud-back.parallax-buddha__layer(data-speed="0")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/cloud-back-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/cloud-back.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/cloud-back-desktop.png"))
+          img(src="" alt="")
+      .parallax-buddha__mountain-buddha.parallax-buddha__layer(data-speed="0.04")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/mountain-buddha-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/mountain-buddha.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/mountain-buddha.png"))
+          img(src="" alt="")
+      .parallax-buddha__buddha.parallax-buddha__layer(data-speed="0.01")
+         picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/buddha.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/buddha.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/buddha.png"))
+          img(src="" alt="")
+      .parallax-buddha__cloud-front.parallax-buddha__layer(data-speed="0.03")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/cloud-front-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/cloud-front.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/cloud-front-desktop.png"))
+          img(src="" alt="")
+      .parallax-buddha__cloud-buddha.parallax-buddha__layer(data-speed="0.015")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/cloud-buddha-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/cloud-buddha.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/cloud-buddha-desktop.png"))
+          img(src="" alt="")
+      .parallax-buddha__cloud-front-bottom.parallax-buddha__layer(data-speed="0.02")
+        picture.parallax-buddha__img
+          source(media="(min-width:2560px)" srcset=require("images/content/cloud-front-bottom-desktophd.png"))
+          source(media="(min-width:1800px)" srcset=require("images/content/cloud-front-bottom.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/cloud-front-bottom-desktop.png"))
+          img(src="" alt="")
+      .parallax-buddha__cloud-back-bottom.parallax-buddha__layer
+        picture.parallax-buddha__img
+          source(media="(min-width:1800px)" srcset=require("images/content/back-bottom.png"))
+          source(media="(min-width:1200px)" srcset=require("images/content/back-bottom.png"))
+          img(src="" alt="")
+  section.section-values.about-me__section-values
+    section.triangles.about-me__triangles
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.about-me__triangle
+        polygon(points="0,0 0,100 1000,100")
+      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__item.about-me__triangle
+        polygon(points="1000,0 1000,100 0,100")
+
+  .container
+
+    #review-component
+
+    .about-me__contact-me
+      .contact-me
+        h3.contact-me__title Связаться со мной
+        form.contact-me__search(action="#" method="get" id="form-contact")
+          .contact-me__wrap
+            .contact-me__column
+              label(for="name") Введите ваше имя
+              input(type="text" id="name" name="name"  placeholder="Ковальчук Дмитрий" required)
+              +icon("user", "contact-me__icon-user")
+            .contact-me__column
+              label(for="email") Введите ваш email
+              input(type="email" id="email" name="email"  placeholder="loftschool@study.com" required)
+              +icon("envelope", "contact-me__icon-envelope")
+          .contact-me__column
+            label(for="comment") Сообщение к письму
+            textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" required)
+            +icon("message", "contact-me__icon-message")
+          button(type="submit").contact-me__btn Отправить

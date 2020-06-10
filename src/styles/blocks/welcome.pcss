@@ -1,3 +1,45 @@
 .welcome {
     background-color: #afc4f3;
+    overflow: hidden;
+}
+
+.welcome__triangles {
+    bottom: 0;
+    margin-bottom: -1px;
+}
+
+.welcome__wrap {
+    position: relative;
+}
+
+@media screen and (min-width: $bp-desktop) and (max-width: 1799px) {
+    .welcome {
+        background-color: #afc4f3;
+    }
+
+    .welcome__triangles {
+        margin-bottom: -1px;
+    }
+}
+
+@media screen and (min-width: $bp-tablets) and (max-width: 1199px) {
+    .welcome {
+        background-position: 0 0;
+        background-image: url("../images/content/baloon-img.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .welcome__triangles {
+        margin-bottom: -1px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: $bp-phones) {
+    .welcome {
+        background-position: 0 0;
+        background-image: url("../images/content/baloon-img-mobile.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
