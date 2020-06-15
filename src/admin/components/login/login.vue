@@ -37,8 +37,7 @@
 </template>
 
 <script>
-import axios from "axios";
-const baseUrl = "https://webdev-api.loftschool.com";
+import $axios from "../../requests.js";
 
 export default {
 
@@ -53,13 +52,13 @@ export default {
 
     async login() {
       try {
-        const response = await axios.post(baseUrl + '/login', this.user);
+        const response = await $axios.post("/login", this.user);
         const token = response.data.token;
         localStorage.setItem("token", token);
-        axios.defaults.headers["Autorization"] = `Bearer ${token}`
+        $axios.defaults.headers["Autorization"] = `Bearer ${token}`
         this.$router.replace("/");
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
   }

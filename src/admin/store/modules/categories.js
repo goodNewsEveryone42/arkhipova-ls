@@ -3,10 +3,25 @@ export default {
   state: {
     categories: []
   },
-  mutations: {},
+  mutations: {
+    
+  },
   actions: {
-    addCategory(store, title) {
-      console.log(title);
+    async addCategory(store, title) {
+      try {
+        const response = await this.$axios.post("/categories", {title});
+        console.log(response);
+      } catch (error) {
+        throw new Error(error.response.data.error || error.response.data.message);
+      }
+    },
+    async fetchCategories(store) {
+      try {
+        const {data} = await this.$axios.get("/categories/1");
+
+      } catch (error) {
+
+      }
     }
-  }
+  },
 };
