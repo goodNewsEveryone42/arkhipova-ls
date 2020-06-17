@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const babelPolyfill = require("@babel/polyfill");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
@@ -94,7 +95,7 @@ module.exports = (env, argv) => {
   const config = {
     entry: {
       main: "./src/main.js",
-      admin: "./src/admin/main.js"
+      admin: ["@babel/polyfill", "./src/admin/main.js"]
     },
     output: {
       path: path.resolve(__dirname, "./dist"),
