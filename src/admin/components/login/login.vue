@@ -54,7 +54,8 @@ export default {
       try {
         const response = await $axios.post("/login", this.user);
         const token = response.data.token;
-        localStorage.setItem("token", token);
+        console.log(token);
+        localStorage.setItem("tokenLoft", token);
         $axios.defaults.headers["Autorization"] = `Bearer ${token}`
         this.$router.replace("/");
       } catch (error) {

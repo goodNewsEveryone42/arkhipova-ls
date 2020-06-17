@@ -9,8 +9,7 @@ export default {
   actions: {
     async addCategory(store, title) {
       try {
-        const response = await this.$axios.post("/categories", {title});
-        console.log(response);
+        const response = await this.$axios.post(`/categories?token=${localStorage.getItem("tokenLoft")}`, { title });
       } catch (error) {
         throw new Error(error.response.data.error || error.response.data.message);
       }
