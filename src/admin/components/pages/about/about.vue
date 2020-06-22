@@ -7,9 +7,7 @@
       .group-skills
         .group-skills__item.skill-item
           .skill-item__wrapper
-            form(
-              @submit.prevent="createNewCategory"
-            ).skill-item__form-new-group.form-group
+            form(@submit.prevent="createNewCategory").skill-item__form-new-group.form-group
               .form-group__name-group
                 .form-group__input-wrap
                   .form-group__input-container
@@ -27,10 +25,16 @@
                         <svg x="0px" y="0px" viewBox="0 0 174.239 174.239" style="enable-background:new 0 0 174.239 174.239;" xml:space="preserve">
                           <path d="M146.537,1.047c-1.396-1.396-3.681-1.396-5.077,0L89.658,52.849c-1.396,1.396-3.681,1.396-5.077,0L32.78,1.047 c-1.396-1.396-3.681-1.396-5.077,0L1.047,27.702c-1.396,1.396-1.396,3.681,0,5.077l51.802,51.802c1.396,1.396,1.396,3.681,0,5.077 L1.047,141.46c-1.396,1.396-1.396,3.681,0,5.077l26.655,26.655c1.396,1.396,3.681,1.396,5.077,0l51.802-51.802 c1.396-1.396,3.681-1.396,5.077,0l51.801,51.801c1.396,1.396,3.681,1.396,5.077,0l26.655-26.655c1.396-1.396,1.396-3.681,0-5.077 l-51.801-51.801c-1.396-1.396-1.396-3.681,0-5.077l51.801-51.801c1.396-1.396,1.396-3.681,0-5.077L146.537,1.047z"/>
                         </svg>
+        .group-skills__item.skill-item(v-for="cat in categories" :key="cat.id")
+          .skill-item__wrapper
+            .form-group__input-items {{cat.category}}
+              .form-group__name-group
+                .form-group__input-wrap
+                  .form-group__input-container
               .form-group__input-wrap
                 table.form-group__table
                   tr
-                    td Git
+                    td GIT
                     td 100&nbsp;&nbsp;%
                     td
                       button(type="botton").btn-pencil
@@ -56,7 +60,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   data() {
     return {
@@ -65,16 +69,26 @@ export default {
     }
     }
   },
+  computed: {
+    ...mapState("categories", {
+      categories: state => state.categories
+      })
+  },
+
+  created() {
+    this.fetchCategories();
+    this.getIdUser();
+  },
   methods: {
-    ...mapActions("categories", ["addCategory"]),
+    ...mapActions("categories", ["addCategory", "fetchCategories", "getIdUser"]),
     async createNewCategory() {
       try {
         await this.addCategory(this.category.title);
-        // this.category.title = "";
+        this.category.title = "";
       } catch (error) {
-        console.log(error.message)
+        console.log(error.message);
       }
-    }
+    },
   }
 }
 </script>
@@ -129,6 +143,7 @@ export default {
 
 .group-skills {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -268,6 +283,7 @@ export default {
   width: 48.5%;
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
   background-color: #ffffff;
 
   .skill-item__wrapper {
