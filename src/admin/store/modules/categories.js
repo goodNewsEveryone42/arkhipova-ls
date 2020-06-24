@@ -1,10 +1,12 @@
 export default {
   namespaced: true,
   state: {
-    categories: []
+    categories: [],
   },
   mutations: {
-    
+    SET_CATEGORIES(state, categories) {
+      state.categories = categories;
+    },
   },
   actions: {
     async addCategory(store, title) {
@@ -14,13 +16,14 @@ export default {
         throw new Error(error.response.data.error || error.response.data.message);
       }
     },
-    async fetchCategories(store) {
+
+    async fetchCategories({ commit }) {
       try {
-        const {data} = await this.$axios.get("/categories/1");
-
+        const {data} = await this.$axios.get(`/categories/341?token=${localStorage.getItem("tokenLoft")}`);
+        commit("SET_CATEGORIES", data);
       } catch (error) {
-
+        console.log(error);
       }
-    }
+    },
   },
 };

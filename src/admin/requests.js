@@ -2,12 +2,6 @@ import axios from "axios";
 
 const token = localStorage.getItem("tokenLoft");
 
-// if (!token) {
-//   console.warn("Токен отсутствует");
-// } else {
-  
-// }
-
 const $axios = axios.create({
   baseURL: "https://webdev-api.loftschool.com",
   headers: {

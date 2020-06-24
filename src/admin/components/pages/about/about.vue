@@ -7,9 +7,7 @@
       .group-skills
         .group-skills__item.skill-item
           .skill-item__wrapper
-            form(
-              @submit.prevent="createNewCategory"
-            ).skill-item__form-new-group.form-group
+            form(@submit.prevent="createNewCategory").skill-item__form-new-group.form-group
               .form-group__name-group
                 .form-group__input-wrap
                   .form-group__input-container
@@ -27,18 +25,26 @@
                         <svg x="0px" y="0px" viewBox="0 0 174.239 174.239" style="enable-background:new 0 0 174.239 174.239;" xml:space="preserve">
                           <path d="M146.537,1.047c-1.396-1.396-3.681-1.396-5.077,0L89.658,52.849c-1.396,1.396-3.681,1.396-5.077,0L32.78,1.047 c-1.396-1.396-3.681-1.396-5.077,0L1.047,27.702c-1.396,1.396-1.396,3.681,0,5.077l51.802,51.802c1.396,1.396,1.396,3.681,0,5.077 L1.047,141.46c-1.396,1.396-1.396,3.681,0,5.077l26.655,26.655c1.396,1.396,3.681,1.396,5.077,0l51.802-51.802 c1.396-1.396,3.681-1.396,5.077,0l51.801,51.801c1.396,1.396,3.681,1.396,5.077,0l26.655-26.655c1.396-1.396,1.396-3.681,0-5.077 l-51.801-51.801c-1.396-1.396-1.396-3.681,0-5.077l51.801-51.801c1.396-1.396,1.396-3.681,0-5.077L146.537,1.047z"/>
                         </svg>
+              pre {{categories}}
+              
+        .group-skills__item.skill-item(v-for="cat in categories" :key="cat.id")
+          .skill-item__wrapper
+            .form-group__input-items {{cat.category}}
+              .form-group__name-group
+                .form-group__input-wrap
+                  .form-group__input-container
               .form-group__input-wrap
                 table.form-group__table
                   tr
-                    td Git
+                    td GIT
                     td 100&nbsp;&nbsp;%
                     td
-                      button(type="botton").btn-pencil
+                      button(type="button").btn-pencil
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="528.899px" height="528.899px" viewBox="0 0 528.899 528.899" style="enable-background:new 0 0 528.899 528.899;"xml:space="preserve">
                           <path d="M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,63.177l-47.981-47.981 c-18.543-18.543-48.653-18.543-67.259,0l-45.961,45.961l107.59,107.59l53.611-53.611 C532.495,100.753,532.495,77.559,518.113,63.177z M0.3,512.69c-1.958,8.812,5.998,16.708,14.811,14.565l119.891-29.069 L27.473,390.597L0.3,512.69z"/>
                         </svg>
                     td
-                      button(type="botton").btn-trash
+                      button(type="button").btn-trash
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="459px" height="459px" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;" xml:space="preserve">
                           <g id="delete">
                             <path d="M76.5,408c0,28.05,22.95,51,51,51h204c28.05,0,51-22.95,51-51V102h-306V408z M408,25.5h-89.25L293.25,0h-127.5l-25.5,25.5 H51v51h357V25.5z"/>
@@ -46,35 +52,49 @@
                         </svg>
                   
                 .form-group__skills
-                  .form-group__skills-wrap
+                  form.form-group__skills-wrap
                     label(for="new-skill")
-                    input(type="text" id="new-skill" name="new-skill" placeholder="Новый навык")
+                    input(type="text"  name="new-skill" id="new-skill" placeholder="Новый навык" v-once v-model="skill.title")
                     label(for="percent")
-                    input(type="text" id="percent" name="percent" placeholder="100 %")
+                    input(type="text"  name="percent" id="percent" placeholder="100 %" v-once v-model="skill.percent")
                     button(type="button") +
         
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   data() {
     return {
-       category: {
-         title: "",
+      category: {
+        title: "",
+    },
+    skill: {
+      title: "",
+      percent: 0,
+      category: 0
     }
     }
   },
+  computed: {
+    ...mapState("categories", {
+      categories: state => state.categories
+      })
+  },
+
+  created() {
+    this.fetchCategories();
+  },
   methods: {
-    ...mapActions("categories", ["addCategory"]),
+    ...mapActions("categories", ["addCategory", "fetchCategories"]),
     async createNewCategory() {
       try {
         await this.addCategory(this.category.title);
-        // this.category.title = "";
+        this.category.title = "";
       } catch (error) {
-        console.log(error.message)
+        console.log(error.message);
       }
-    }
+    },
   }
 }
 </script>
@@ -129,6 +149,7 @@ export default {
 
 .group-skills {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -268,6 +289,7 @@ export default {
   width: 48.5%;
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
   background-color: #ffffff;
 
   .skill-item__wrapper {
