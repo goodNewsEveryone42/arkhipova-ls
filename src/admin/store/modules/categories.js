@@ -2,16 +2,11 @@ export default {
   namespaced: true,
   state: {
     categories: [],
-    id: []
   },
   mutations: {
     SET_CATEGORIES(state, categories) {
       state.categories = categories;
     },
-
-    GET_ID(state, id) {
-      state.id = id;
-    }
   },
   actions: {
     async addCategory(store, title) {
@@ -22,15 +17,6 @@ export default {
       }
     },
 
-    async getIdUser({ commit }) {
-      try {
-        const response = await this.$axios.get(`/user?token=${localStorage.getItem("tokenLoft")}`);
-        commit("GET_ID", response);
-      } catch (error) {
-        console.log(error);
-      }
-    },
-
     async fetchCategories({ commit }) {
       try {
         const {data} = await this.$axios.get(`/categories/341?token=${localStorage.getItem("tokenLoft")}`);
@@ -38,6 +24,6 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    }
+    },
   },
 };
