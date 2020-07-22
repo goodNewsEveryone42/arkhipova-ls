@@ -1,8 +1,4 @@
 export default {
-    namespaced: true,
-    mutations: {
-    },
-    actions: {
-      
-    },
-  };
+  namespaced: true,
+  actions: {},
+};

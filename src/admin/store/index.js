@@ -9,6 +9,6 @@ import skill from "../store/modules/skill.js";
 export const store = new Vuex.Store({
   modules: {
     categories,
-    skill
-  }
+    skill,
+  },
 });

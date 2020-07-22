@@ -40,36 +40,31 @@
 import $axios from "../../requests.js";
 
 export default {
-
   props: ["background"],
   data: () => ({
     user: {
       name: "",
-      password: "",
+      password: ""
     }
   }),
   methods: {
-
     async login() {
       try {
         const response = await $axios.post("/login", this.user);
         const token = response.data.token;
-        console.log(token);
+        console.log(response.data);
         localStorage.setItem("tokenLoft", token);
-        $axios.defaults.headers["Autorization"] = `Bearer ${token}`
+        $axios.defaults.headers["Autorization"] = `Bearer ${token}`;
         this.$router.replace("/");
       } catch (error) {
         console.error(error);
       }
     }
   }
-
-}
+};
 </script>
 
 <style lang="postcss" scoped>
-
-
 .login-title {
   font-size: 36px;
   flex-wrap: 600;
@@ -86,9 +81,9 @@ export default {
 }
 
 .login__btn-close {
-display: flex;
-justify-content: flex-end;
-margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .btn-close {
@@ -136,7 +131,6 @@ margin-top: 20px;
   background-color: #ffffff;
 }
 
-
 .login__container {
   width: 87%;
 }
@@ -169,7 +163,7 @@ margin-top: 20px;
 .login-form__btn {
   display: flex;
   justify-content: center;
-   margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .login-form button {
@@ -194,7 +188,7 @@ margin-top: 20px;
   width: 19.4%;
   background-color: #ca1d1d;
 
-  p{
+  p {
     font-size: 16px;
     line-height: 30px;
     font-weight: 600;
@@ -231,11 +225,11 @@ margin-top: 20px;
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .login-title {
-  font-size: 30px;
-  flex-wrap: 600;
-  text-align: center;
-  margin-bottom: 20px;
-}
+    font-size: 30px;
+    flex-wrap: 600;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
   .login {
     width: 100%;
@@ -245,27 +239,25 @@ margin-top: 20px;
   }
 
   .login-img-wrapper {
-  display: none;
-}
+    display: none;
+  }
 
-.login__btn-close {
-  margin-top: 27px;
-  margin-bottom: 102px;
-}
+  .login__btn-close {
+    margin-top: 27px;
+    margin-bottom: 102px;
+  }
 
-.login-wrapper {
-  width: 95%;
-}
+  .login-wrapper {
+    width: 95%;
+  }
 
-.login-form input {
-  height: 65px;
-  margin-bottom: 30px;
-}
+  .login-form input {
+    height: 65px;
+    margin-bottom: 30px;
+  }
 
-.login-form__btn {
-  margin-top: 10px;
+  .login-form__btn {
+    margin-top: 10px;
+  }
 }
-}
-
-
 </style>

@@ -27,9 +27,20 @@
                         </svg>
               pre {{categories}}
               
-        .group-skills__item.skill-item(v-for="cat in categories" :key="cat.id")
+        .group-skills__item.skill-item(v-for="cat in categories" :key="cat.id" :data-id="cat.id")
           .skill-item__wrapper
-            .form-group__input-items {{cat.category}}
+            .form-group__input-items
+              .form-group__input-container
+                .form-group__input-item {{cat.category}}
+                .form-group__btn
+                  button(type="button")
+                    <svg x="0px" y="0px" viewBox="0 0 342.357 342.357" style="enable-background:new 0 0 342.357 342.357;" xml:space="preserve">
+                      <polygon points="290.04,33.286 118.861,204.427 52.32,137.907 0,190.226 118.862,309.071 342.357,85.606 "/>
+                    </svg>
+                  button(type="button" @click="deleteCategories" :data-id="cat.id")
+                    <svg :data-id="cat.id" x="0px" y="0px" viewBox="0 0 174.239 174.239" style="enable-background:new 0 0 174.239 174.239;" xml:space="preserve">
+                      <path :data-id="cat.id" d="M146.537,1.047c-1.396-1.396-3.681-1.396-5.077,0L89.658,52.849c-1.396,1.396-3.681,1.396-5.077,0L32.78,1.047 c-1.396-1.396-3.681-1.396-5.077,0L1.047,27.702c-1.396,1.396-1.396,3.681,0,5.077l51.802,51.802c1.396,1.396,1.396,3.681,0,5.077 L1.047,141.46c-1.396,1.396-1.396,3.681,0,5.077l26.655,26.655c1.396,1.396,3.681,1.396,5.077,0l51.802-51.802 c1.396-1.396,3.681-1.396,5.077,0l51.801,51.801c1.396,1.396,3.681,1.396,5.077,0l26.655-26.655c1.396-1.396,1.396-3.681,0-5.077 l-51.801-51.801c-1.396-1.396-1.396-3.681,0-5.077l51.801-51.801c1.396-1.396,1.396-3.681,0-5.077L146.537,1.047z"/>
+                    </svg>
               .form-group__name-group
                 .form-group__input-wrap
                   .form-group__input-container
@@ -67,26 +78,30 @@ export default {
   data() {
     return {
       category: {
+        title: ""
+      },
+      skill: {
         title: "",
-    },
-    skill: {
-      title: "",
-      percent: 0,
-      category: 0
-    }
-    }
+        percent: 0,
+        category: 0
+      }
+    };
   },
   computed: {
     ...mapState("categories", {
       categories: state => state.categories
-      })
+    })
   },
 
   created() {
     this.fetchCategories();
   },
   methods: {
-    ...mapActions("categories", ["addCategory", "fetchCategories"]),
+    ...mapActions("categories", [
+      "addCategory",
+      "fetchCategories",
+      "deleteCategory"
+    ]),
     async createNewCategory() {
       try {
         await this.addCategory(this.category.title);
@@ -95,8 +110,14 @@ export default {
         console.log(error.message);
       }
     },
+    async deleteCategories(e) {
+      const idAttribute = e.target.dataset.id;
+      try {
+        await this.deleteCategory(idAttribute);
+      } catch (error) {}
+    }
   }
-}
+};
 </script>
 
 <style lang="postcss" scoped>
@@ -325,7 +346,6 @@ export default {
   }
 
   .form-group__btn {
-
     button {
       display: none;
     }
@@ -344,7 +364,7 @@ export default {
 
   .form-group__input-container {
     position: relative;
-  
+
     label {
       position: absolute;
       display: block;
@@ -393,7 +413,5 @@ export default {
     justify-content: center;
     background-color: #ffffff;
   }
-
 }
-
 </style>
