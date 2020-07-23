@@ -32,10 +32,12 @@ export default {
         console.log(error);
       }
     },
-    async deleteCategory(id) {
+    async deleteCategory(store, idAttribute) {
       try {
         const response = await this.$axios.delete(
-          `/categories/${id}?token=${localStorage.getItem("tokenLoft")}`
+          `/categories/${idAttribute}?token=${localStorage.getItem(
+            "tokenLoft"
+          )}`
         );
       } catch (error) {
         console.log(error);
